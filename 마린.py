@@ -1,4 +1,3 @@
-
 class Marine:
 
     atkmax = 0
@@ -32,6 +31,7 @@ class Marine:
             Marine.dfmax += 1
         print(Marine.df)
 
+
 class Jimraner(Marine):
     Marine.atk = 7
     Marine.df = 1
@@ -43,12 +43,13 @@ class Jimraner(Marine):
         print("클록킹을 활성화합니다.")
 
     def steampack(self):
-        #super().asd() # 원래 asd 코드 까지도 가져올 수 있음 super() 은 자신의 부모 클래스를 의미한다고 생각하면 됨
+        # super().asd() # 원래 asd 코드 까지도 가져올 수 있음 super() 은 자신의 부모 클래스를 의미한다고 생각하면 됨
         if self.hp > 9:
             self.hp -= 9
         else:
             print("스팀팩을 사용할 수 없습니다.")
         print("현재 체력 :", self.hp)
+
 
 raner1 = Jimraner()
 raner2 = Jimraner()
@@ -70,8 +71,3 @@ raner2.dfup()
 raner2.dfup()
 print(raner1.atk, raner2.atk)
 print(raner1.df, raner2.df)
-
-
-
-
-

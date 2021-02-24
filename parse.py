@@ -16,5 +16,5 @@ weapon = open("Weapon.txt", "r")
 weapon_data = json.load(weapon)
 for i in weapon_data:
 
-    k = Weapon(i["Name"],i["Weight"],i["Price"],i["Damage"])
+    k = Weapon(i["Name"], i["Weight"], i["Price"], i["Damage"])
     k.describe()

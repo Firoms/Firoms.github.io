@@ -1,28 +1,22 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-URL = 'https://naver.com/'
+URL = "https://naver.com/"
 cOptions = Options()
 cOptions.add_argument("--disable-infobars")
 cOptions.add_argument("--disable-extensions")
-cOptions.add_experimental_option("prefs", {
-    "profile.default_content_setting_values.notifications" : 1
-})
+cOptions.add_experimental_option(
+    "prefs", {"profile.default_content_setting_values.notifications": 1}
+)
 
 
-driver = webdriver.Chrome(chrome_options= cOptions, executable_path = 'C:\\코딩\\파이썬연습\\chromedriver.exe')
+driver = webdriver.Chrome(
+    chrome_options=cOptions, executable_path="C:\\코딩\\파이썬연습\\chromedriver.exe"
+)
 
 driver.implicitly_wait(1)
 driver.get(URL)
 driver.implicitly_wait(1)
-
-
-
-
-
-
-
-
 
 
 # id = ''

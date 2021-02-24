@@ -20,46 +20,55 @@
 # soccer.describe()
 import json
 
+
 class Item:
     def __init__(self, name, weight, price):
         self.name = name
         self.weight = weight
         self.price = price
+
     def describe(self):
         print(f"Name  = {self.name}")
         print(f"Weight  = {self.weight}")
         print(f"Price  = {self.price}")
 
+
 items = []
+
+
 class Weapon(Item):
     def __init__(self, name, weight, price, damage):
         super().__init__(name, weight, price)
         self.damage = damage
         self.dic = {}
+
     def describe(self):
         super().describe()
         print(f"Damage  = {self.damage}")
+
     def save(self):
-        self.dic['Name'] = self.name
-        self.dic['Weight'] = self.weight
-        self.dic['Price'] = self.price
-        self.dic['Damage'] = self.damage
+        self.dic["Name"] = self.name
+        self.dic["Weight"] = self.weight
+        self.dic["Price"] = self.price
+        self.dic["Damage"] = self.damage
         items.append(self.dic)
+
 
 class Armor(Item):
     def __init__(self, name, weight, price, defence):
         super().__init__(name, weight, price)
         self.defence = defence
         self.dic = {}
+
     def describe(self):
         super().describe()
         print(f"Defence  = {self.defence}")
-    def save(self):
-        self.dic['Name'] = self.name
-        self.dic['Weight'] = self.weight
-        self.dic['Price'] = self.price
-        self.dic['Defence'] = self.defence
 
+    def save(self):
+        self.dic["Name"] = self.name
+        self.dic["Weight"] = self.weight
+        self.dic["Price"] = self.price
+        self.dic["Defence"] = self.defence
 
 
 sword = Weapon("sword", 20.0, 3000, 15)
@@ -72,7 +81,6 @@ print(items)
 B = open("Weapon.txt", "w")
 B.write(str(json.dumps(items)))
 B.close()
-
 
 
 # shield = Armor("shield", 25.3, 3500, 30)

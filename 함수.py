@@ -8,31 +8,34 @@
 # print(add(1,2))
 
 
-def add(*args) : #*를 붙여 여러 개를 저장할 수 있음
+def add(*args):  # *를 붙여 여러 개를 저장할 수 있음
 
-    '''a = 0
+    """a = 0
     total = 0
     while a < len(args):
         total += args[a]
         a += 1
-    return total'''
+    return total"""
 
-    '''total = 0
+    """total = 0
     for i in range(len(args)):
         total += args[i]
-    return total '''
+    return total """
 
     total = 0
-    for i in args :
+    for i in args:
         total += i
     return total
+
 
 print(add(1, 2, 3, 4, 5))
 
 
 # () tuple >> 바꿀 수 없는 값
 
-def add(**kwargs):  #dictionary 로 값을 받음
-    print(kwargs)
-add(one=1, two=2)
 
+def add(**kwargs):  # dictionary 로 값을 받음
+    print(kwargs)
+
+
+add(one=1, two=2)

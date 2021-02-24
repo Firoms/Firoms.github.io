@@ -7,6 +7,6 @@ f.close()
 f = open("note.txt", "r")
 s1 = f.readline()
 print(s1)
-s2 = f.readlines() # 리스트 형태로 반환
+s2 = f.readlines()  # 리스트 형태로 반환
 print(s2)
 f.close()

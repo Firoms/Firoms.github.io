@@ -15,8 +15,6 @@ def move():
     print("성공")
 
 
-
-
 class GameScreen:
     def __init__(self):
         self.display = Tk()
@@ -25,12 +23,9 @@ class GameScreen:
         GameScreen.components = self.components()
         self.display.mainloop()
 
-
-
-
     def components(self):
-        img_label = Label(self.display, height = 50, width = 50)
-        img_label.place(x=0 , y=0)
+        img_label = Label(self.display, height=50, width=50)
+        img_label.place(x=0, y=0)
         img_name = img_list[0]
         final_path = os.path.join(img_path, img_name)
         character_img = ImageTk.PhotoImage(file=final_path)
@@ -55,10 +50,4 @@ class GameScreen:
         t.start()
 
 
-
-
-
-
-
 game = GameScreen()
-
