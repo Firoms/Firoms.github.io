@@ -76,10 +76,33 @@ bool형에는 True와 False 두가지만 존재한다.
 ---
 
 ## 5. list
+list형은 여러 자료형을 묶어놓은 듯한 형태의 자료형이다.   
+[] 안에 , 를 간격으로 다양한 자료들을 넣어줄 수 있다.   
+list 안에 list 역시 넣어줄 수 있다는 점이 특징이다.   
+
+    >>> print(type([1, 2, 3]))
+    <class 'list'>
+
+    >>> print(type(['a','b', ['c', 'd', 'e']]))
+    <class 'list'>
 
 ---
 
 ## 6. tuple
+tuple형은 list형처럼 여러 자료형을 묶어놓은 듯한 형태의 자료형이다.   
+() 안에 , 를 간격으로 다양한 자료들을 넣어줄 수 있다.   
+tuple 안에 tuple 역시 넣어줄 수 있다.  
+그러나 list형과는 달리, tuple형의 값을 바꿀 수 없다.   
+언뜻 보기에는 값이 바뀔때도 있는 것 같아 혼동된다.   
+하지만 tuple이 변하면, tuple의 id 값이 함께 변한다.
+즉, tuple의 값이 변한 것이 아니라 새로운 tuple 자료가 생성된 것이다.
+
+    >>> print(type((1, 2, 3)))
+    <class 'tuple'>
+
+    >>> print(type(('a', 'b', ('c', 'd', 'e'))))
+    <class 'tuple'>
+
 
 ---
 
