@@ -106,26 +106,31 @@ tuple 안에 tuple 역시 넣어줄 수 있다.
 
 ---
 
-## 7. dictionary
+## 7. dict (dictionary)
+dictionary형은 key에 따른 value 값을 가지는 형태의 자료형이다.   
+쉽게 말해서 두 값을 쌍으로 저장하는 리스트이다.   
+{} 안에 , 를 간격으로 key:value 형태로 다양한 자료들을 넣어줄 수 있다.   
+다만 key 값은 중복될 수 없고 value 값만 중복될 수 있다.   
+따라서 key 값만 있으면 value 값을 가져올 수 있는 것이 장점이다.   
+처음에는 필요성을 못 느낄 수도 있지만, 나중에 정말 유용한 자료형이다.     
+
+    >>> print(type({1:'A', 2:'B', 3:'C'}))
+    <class 'dict'>
+
+    >>> print(type({1:1, 2:1, 3:1}))
+    <class 'dict'>
+
 
 ---
 
-## 8. set
+## 8. function
 
 ---
 
-## 9. function
+## 9. type
 
 ---
 
-## 10. range
-
----
-
-## 11. type
-
----
-
-## 12. __main__
+## 10. 그 외(range, set, __main__ 등)
 
 ---
