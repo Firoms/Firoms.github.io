@@ -3,11 +3,11 @@
 자료형은 쉽게 말해서 자료의 형태이다.   
 다양한 자료들이 각각의 자료형으로 분류되면서 자료들을 보다 쉽게 파악하고 다룰 수 있다.   
 파이썬은 다양한 자료형의 자료들로만 이루어졌다고 봐도 될 정도로 자료형은 중요하다.   
-대표적인 파이썬의 자료형으로는 [int](<##1. int (정수형)>), [float](<##2. float (실수형)>), [str], [bool], [list], [tuple], [set], [dictionary], [function], [class](<##9. type>) 등이 있다.   
+대표적인 파이썬의 자료형으로는 [int](<##int>), [float](<##2. float (실수형)>), [str], [bool], [list], [tuple], [set], [dictionary], [function], [class](<##9. type>) 등이 있다.   
 자료의 자료형은 파이썬 내장 함수인  type을 이용하여  확인해 볼 수 있다.   
 
 ---
-## 1. int (정수형)
+## int
 int는 integer의 줄임말로 integer는 정수를 뜻하는 단어이다.   
 따라서 정수들은 모두 int 자료형에 속한다.      
 파이썬 내장 함수인 [type]을 이용하면 int 자료형인지 확인할 수 있다.   
