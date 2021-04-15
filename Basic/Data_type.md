@@ -134,3 +134,4 @@ dictionary형은 key에 따른 value 값을 가지는 형태의 자료형이다.
 ## 10. 그 외(range, set, __main__ 등)
 
 ---
+data type
