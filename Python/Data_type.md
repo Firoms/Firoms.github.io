@@ -3,83 +3,31 @@
 자료형은 쉽게 말해서 자료의 형태이다.   
 다양한 자료들이 각각의 자료형으로 분류되면서 자료들을 보다 쉽게 파악하고 다룰 수 있다.   
 파이썬은 다양한 자료형의 자료들로만 이루어졌다고 봐도 될 정도로 자료형은 중요하다.   
-대표적인 파이썬의 자료형으로는 [int](#1-int-정수형), [float](#2-float-실수형), [str], [bool], [list], [tuple], [set], [dictionary], [function], [class](<##9. type>) 등이 있다.   
+대표적인 파이썬의 자료형으로는 [int](#1-int-정수형), [float](#2-float-실수형), [str](#3-str-문자형), [bool], [list], [tuple], [set], [dictionary], [function], [class](<##9. type>) 등이 있다.   
 자료의 자료형은 파이썬 내장 함수인  type을 이용하여  확인해 볼 수 있다.   
 
 ---
 ## 1. int 정수형
 int는 integer의 줄임말로 integer는 정수를 뜻하는 단어이다.   
-따라서 정수들은 모두 int 자료형에 속한다.      
-파이썬 내장 함수인 [type]을 이용하면 int 자료형인지 확인할 수 있다.   
+따라서 정수들은 모두 int 자료형에 속한다.   
 보통 다양한 [연산]을 하는데 사용된다.   
 
 ---
 
 ## 2. float 실수형
-float은 실수를 뜻하는 단어로 모든 실수형은 float 자료형에 속한다.   
-정수도 실수에 포함되지만, 소수점이 붙은 경우에만 float 자료형이라고 생각해도 된다.   
-예를 들어, 3은 int 자료형이지만 3.0은 float 자료형인 것이다.   
-마찬가지로 파이썬 내장 함수인 [type]을 이용하면 float 자료형인지 확인 할 수 있다.   
+float은 쉽게 말해서 실수형으로, 모든 실수들이 float 자료형에 속한다.   
+소수점이 붙은 경우에 float 자료형이라고 생각해도 된다.   
+즉, 3은 int 자료형이지만 3.0은 float 자료형인 것이다.   
 int 자료형과 함께 다양한 [연산]을 하는데 사용된다.   
 
 ---
 
-
-int는 integer의 줄임말로 integer는 정수를 뜻하는 단어이다.   
-따라서 정수들을 모두 int형 또는 integer형이라 부른다.   
-
-    >>> print(type(123))
-    <class 'int'>
-
-    >>> print(type(0))
-    <class 'int'>
-
-    >>> print(type(-321))
-    <class 'int'>
-
----
-
-## 2. float
-int형의 정수들을 제외한 실수들은 모두 float형이라 부른다.   
-쉽게 말해서 뒤에 소수점이 붙은 숫자들은 모두 float형이다.   
-0.0, 1.0과 같이 정수에 소수점이 붙은 것 역시 float형으로 분류한다.
-
-    >>> print(type(3.14))
-    <class 'float'>
-
-    >>> print(type(-1.23))
-    <class 'float'>
-
-    >>> print(type(0.0))
-    <class 'float'>
-
----
-
-## 3. str (string)
-str은 string의 줄임말로 string은 문자열을 뜻하는 단어이다.    
-영어, 한국어 모두 str형 또는 string형으로 부른다.   
-단, 문자 그대로 써주는 것이 아니라 따옴표로 감싸주어야 한다.   
-따옴표가 붙지 않은 문자들은 프로그램에서 변수로 인식하기 때문이다.   
-    
-    >>> print(type('Hi'))
-    <class 'str'>
-
-    >>> print(type("안녕하세요"))
-    <class 'str'>
-
-    >>> print(type(""))
-    <class 'str'>
-
-공백 역시 str형에 포함한다는 것을 확인할 수 있다.   
-다만, 다음과 같은 오류상황은 조심하여야 한다.   
-
-    # 오류 상황
-
-    >>> print(type(Hi)) # 변수로 인식하여 오류가 나거나 다른 자료형으로 인식할 수 있다.   
-    NameError: name 'Hi' is not defined
-
-    >>> print(type('안녕하세요")) # 따옴표의 종류를 통일해야 한다.
-    SyntaxError: EOL while scanning string literal
+## 3. str 문자형
+str은 string의 줄임말로 string은 문자열을 뜻하는 단어이다.   
+영어와 한국어를 포함한 모든 문자들은 str 자료형에 속한다.   
+다만, str 자료형의 가장 큰 중요한 점은 ''나 "" 따옴표로 감싸주어야 한다는 점이다.   
+아무래도 [변수]와의 구별을 위한 것이 아닐까 싶다.   
+따라서, 따옴표로 감싸지 않으면 [변수]로 인식될 우려가 있기에 꼭 주의해야한다.   
 
 ---
 
