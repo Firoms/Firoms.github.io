@@ -24,3 +24,7 @@
 # IndentationError
 1) IndentationError: expected an indented block
         들여쓰기를 잘못했을 때 일어나는 에러이다.
+
+# TypeError
+1) TypeError : int() argument must be a string, a bytes-like object or a number, not <>
+        자료를 int 자료형으로 바꾸려할 때 발생하는 오류로 int 자료형으로 변경 불가할 때 발생하는 에러이다.
