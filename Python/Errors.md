@@ -31,6 +31,10 @@
 
 2) TypeError: 'tuple' object does not support item <>
         튜플 값을 변경하려고 할 때 발생하는 오류로 일어나는 오류로 tuple은 immutable 한 자료형이다.
+
+3) TypeError: object of type '' has no len()
+        len 함수를 사용 불가한 자료형에 사용했을 때 일어나는 오류이다.
+
 # ValueError
 1) ValueError: invalid literal for int() with base 10: <>
         str 자료형 값을 int 자료형으로 변경하려고 할 때 주로 일어나는 오류이다.
