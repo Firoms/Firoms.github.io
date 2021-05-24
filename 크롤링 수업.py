@@ -1,10 +1,11 @@
-# bs4 requests 다운  숙제 : 다음에서 크롤링 >> 대만 날씨 출력하기 앞에 3개 도시명 & 최저 최대 온도
-# deinm@naver.com   //  010-9076-7536
-
+'''
+requests와 BeautifulSoup를 이용하여 Crawling하는 경우에는
+bs4와 requests 라이브러리를 install 해야한다.
+'''
 import requests
 from bs4 import BeautifulSoup
 
-base_URL = "https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query="
+base_URL = "https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=경기도"
 
 
 user_input = input()

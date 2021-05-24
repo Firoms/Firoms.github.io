@@ -1,4 +1,4 @@
-# API 찾아오기 ex) 라이엇게임즈 API 키 찾아오기 ex) https://developers.nexon.com/
+
 class Cake:
     def __init__(self, name, price, ingredient):
         self.name = name
