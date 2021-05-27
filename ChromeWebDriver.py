@@ -1,20 +1,25 @@
-from selenium import webdriver	# 전에 pip install selenium 했던 것을 이용하겠다는 의미
+'''
+selenium을 사용하려면 라이브러리를 install 해줘야한다.
+또한, chrome web driver는 자신의 chrome 버전에 맞는 것을 사용해야한다는 것을 꼭 기억하자.
+'''
+
+# 독서교육종합시스템
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.add_argument('--start-fullscreen')	#옵션 추가(전체화면으로 시작함)
+options.add_argument('--start-fullscreen')
 
-URL = "https://reading.gglec.go.kr/r/newReading/main/main.jsp" 
-# 프로그램을 시작할때 불러올 URL
-id = 'edison0528'
-pw = 'angel00!'
+URL = "https://reading.gglec.go.kr/r/newReading/main/main.jsp"
+
+id = input("id를 입력하세요: ")
+pw = input("pw를 입력하세요: ")
 driver = webdriver.Chrome(
-    executable_path="D:\\Coding\\Firoms_Note\\chromedriver.exe", options=options
+    executable_path="D:\\Coding\\Firoms_Note\\chromedriver.exe", chrome_options=options
 )
-# Chrome Web driver 객체 생성, Chrome Web Driver을 이용함
 
-driver.implicitly_wait(3)	# 오류 방지를 위해 3초 지연
-driver.get(URL)	# 아까 작성한 URL을 불러옴
+driver.implicitly_wait(3)
+driver.get(URL)
 driver.implicitly_wait(3)
 driver.find_element_by_id("headerLoginBtn").click()
 driver.find_element_by_name("s_id").send_keys(id)
@@ -22,9 +27,8 @@ driver.find_element_by_name("s_pwd").send_keys(pw)
 driver.find_element_by_id("s_login").click()
 driver.find_element_by_class_name("changeLater").click()
 
-'''
-'''
 
+# 컴시간 알리미
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
