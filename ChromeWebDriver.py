@@ -1,14 +1,14 @@
-'''
+"""
 selenium을 사용하려면 라이브러리를 install 해줘야한다.
 또한, chrome web driver는 자신의 chrome 버전에 맞는 것을 사용해야한다는 것을 꼭 기억하자.
-'''
+"""
 
 # 독서교육종합시스템
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.add_argument('--start-fullscreen')
+options.add_argument("--start-fullscreen")
 
 URL = "https://reading.gglec.go.kr/r/newReading/main/main.jsp"
 
@@ -33,7 +33,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
-options.add_argument('--start-fullscreen')
+options.add_argument("--start-fullscreen")
 URL = "http://112.186.146.81:4082/st"
 
 school = "동탄고등학교"

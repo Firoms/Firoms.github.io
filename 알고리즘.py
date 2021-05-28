@@ -1563,9 +1563,12 @@ def list_to_tree(nums):
     add_node(node, nums[: li_len // 2], "left")
     add_node(node, nums[li_len // 2 :], "right")
     return node
-'''
+
+
+"""
     node = list_to_tree([-10, -3, 0, 5, 9])
-'''
+"""
+
 
 class Node:
     def __init__(self, val):
@@ -1576,58 +1579,63 @@ class Node:
 
 def list_to_tree(nums):
     li_len = len(nums)
-    node = Node(nums[li_len//2])
+    node = Node(nums[li_len // 2])
     print(node.val)
 
     def add_node(node, nums, dir):
         li_len = len(nums)
         if li_len == 0:
             return
-        if dir == 'left':
-            node.left = Node(nums[li_len//2])
-            add_node(node.left, nums[:li_len//2-1], 'left')
-            add_node(node.left, nums[li_len//2+1:], 'right')
+        if dir == "left":
+            node.left = Node(nums[li_len // 2])
+            add_node(node.left, nums[: li_len // 2 - 1], "left")
+            add_node(node.left, nums[li_len // 2 + 1 :], "right")
             print(node.left.val)
-        if dir == 'right':
-            node.right = Node(nums[li_len//2])
+        if dir == "right":
+            node.right = Node(nums[li_len // 2])
             print(node.right.val)
-            add_node(node.right, nums[:li_len//2-1], 'left')
-            add_node(node.right, nums[li_len//2+1:], 'right')
+            add_node(node.right, nums[: li_len // 2 - 1], "left")
+            add_node(node.right, nums[li_len // 2 + 1 :], "right")
 
-    add_node(node, nums[:li_len//2], 'left')
-    add_node(node, nums[li_len//2:], 'right')
+    add_node(node, nums[: li_len // 2], "left")
+    add_node(node, nums[li_len // 2 :], "right")
     return node
-    '''
+    """
     node = list_to_tree([-10, -3, 0, 5, 9])
     print(node.val, node.left.val, node.left.left, node.left.right)
     print(node.right.val, node.right.right, node.right.left)
-    '''
+    """
 
 
 def buy_sell(prices):
     money_sum = 0
-    for i in range(len(prices)-1):
-        if prices[i] < prices[i+1]:
-            money_sum += prices[i+1] - prices[i]
+    for i in range(len(prices) - 1):
+        if prices[i] < prices[i + 1]:
+            money_sum += prices[i + 1] - prices[i]
     return money_sum
-    '''
+    """
     print(buy_sell([7,1,5,3,6,4]))
     print(buy_sell([1,2,3,4,5]))
-    '''
+    """
+
 
 def word_puzzle(s, word_Dict):
     result = [False]
+
     def erase_s(left_s):
-        if left_s=='':
+        if left_s == "":
             result.append(True)
             return
         for i in word_Dict:
             split_word = left_s.split(i, maxsplit=1)
-            if split_word[0]=='':
+            if split_word[0] == "":
                 erase_s(split_word[1])
+
     erase_s(s)
     return result[-1]
-'''
+
+
+"""
     s = 'leetcode'
     word_Dict = ["leet", "code"]
     print(word_puzzle(s, word_Dict))
@@ -1639,29 +1647,35 @@ def word_puzzle(s, word_Dict):
     s = 'catsandog'
     word_Dict = ["cats", "dog", "sand", "and", "cat"]
     print(word_puzzle(s, word_Dict))
-'''
+"""
+
 
 def middle_node(ln):
     node_li = []
+
     def preorder(ln):
-        if ln==None:
+        if ln == None:
             return
         preorder(ln.left)
         node_li.append(ln.val)
         preorder(ln.right)
+
     preorder(ln)
     return node_li
-    
-'''
+
+
+"""
     ln, ln.right, ln.right.left = Node(1), Node(2), Node(3)
     print(middle_node(ln))
-'''
+"""
+
 
 class Node:
     def __init__(self, val):
         self.left = None
         self.right = None
         self.val = val
+
 
 def linked_li_move(ln, x):
     re_ln = Node(0)
@@ -1678,7 +1692,9 @@ def linked_li_move(ln, x):
         a.right = Node(big.pop(0))
         a = a.right
     return re_ln.right
-'''
+
+
+"""
     ln, ln.right, ln.right.right = Node(1), Node(4), Node(3)
     ln.right.right.right, ln.right.right.right.right = Node(2), Node(5)
     ln.right.right.right.right.right = Node(2)
@@ -1686,30 +1702,33 @@ def linked_li_move(ln, x):
     while b:
         print(b.val)
         b = b.right
-'''
+"""
+
 
 def small_height_root(n, edges):
     from collections import defaultdict
+
     root_dic = defaultdict(list)
     for i, j in edges:
         root_dic[i].append(j)
         root_dic[j].append(i)
     while len(root_dic) > 2:
-        del_li =[]
+        del_li = []
         for i, j in root_dic.items():
-            if len(j)==1:
+            if len(j) == 1:
                 root_dic[j[0]].remove(i)
                 del_li.append(i)
         for i in del_li:
             root_dic.pop(i)
     return [i for i in root_dic.keys()]
 
-'''
+
+"""
     n = 6
     edges = [[3, 0], [3,1], [3,2], [3,4], [5,4]]
     print(small_height_root(n, edges))
-'''
+"""
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

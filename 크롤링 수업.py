@@ -1,7 +1,7 @@
-'''
+"""
 requests와 BeautifulSoup를 이용하여 Crawling하는 경우에는
 bs4와 requests 라이브러리를 install 해야한다.
-'''
+"""
 import requests
 from bs4 import BeautifulSoup
 

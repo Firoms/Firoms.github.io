@@ -1,4 +1,3 @@
-
 class Cake:
     def __init__(self, name, price, ingredient):
         self.name = name
