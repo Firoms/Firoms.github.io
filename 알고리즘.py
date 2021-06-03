@@ -414,8 +414,7 @@ def sum3(num_li):
             for c in range(b + 1, len(num_li)):
                 if num_li[a] + num_li[b] + num_li[c] == 0:
                     if sorted([num_li[a], num_li[b], num_li[c]]) not in result_li:
-                        result_li.append(
-                            sorted([num_li[a], num_li[b], num_li[c]]))
+                        result_li.append(sorted([num_li[a], num_li[b], num_li[c]]))
     return result_li
 
     print(sum3([-1, 0, 1, 2, -1, -4]))
@@ -722,8 +721,7 @@ def excel(num):
         second_alp = two_alp % 26
         if second_alp == 0:
             second_alp = 26
-        print(str(excel_num) +
-              str(alp_list[first_alp]) + str(alp_list[second_alp - 1]))
+        print(str(excel_num) + str(alp_list[first_alp]) + str(alp_list[second_alp - 1]))
     """
     excel(int(input()))
     """
@@ -940,8 +938,7 @@ def network_delay(times, n, k):
             if i[0] != k:
                 give_dic = copy.deepcopy(node)
                 if i[0] in delay_dic:
-                    delay_dic[i[0]] = min(
-                        delay_dic[i[0]], i[1] + delay_dic[num])
+                    delay_dic[i[0]] = min(delay_dic[i[0]], i[1] + delay_dic[num])
                 else:
                     delay_dic[i[0]] = i[1] + delay_dic[num]
                 give_dic[num].remove(i)
@@ -1529,7 +1526,7 @@ def max_hystogram(heights):
         for j in range(len(heights)):
             if i + j > len(heights):
                 break
-            box = heights[j: j + i]
+            box = heights[j : j + i]
             max_s = max([max_s, min(box) * i])
     return max_s
 
@@ -1561,16 +1558,16 @@ def list_to_tree(nums):
         if dir == "right":
             node.right = Node(nums[li_len // 2])
         add_node(node, nums[: li_len // 2], "left")
-        add_node(node, nums[li_len // 2:], "right")
+        add_node(node, nums[li_len // 2 :], "right")
 
     add_node(node, nums[: li_len // 2], "left")
-    add_node(node, nums[li_len // 2:], "right")
+    add_node(node, nums[li_len // 2 :], "right")
     return node
 
 
-'''
+"""
     node = list_to_tree([-10, -3, 0, 5, 9])
-'''
+"""
 
 
 class Node:
@@ -1582,62 +1579,63 @@ class Node:
 
 def list_to_tree(nums):
     li_len = len(nums)
-    node = Node(nums[li_len//2])
+    node = Node(nums[li_len // 2])
     print(node.val)
 
     def add_node(node, nums, dir):
         li_len = len(nums)
         if li_len == 0:
             return
-        if dir == 'left':
-            node.left = Node(nums[li_len//2])
-            add_node(node.left, nums[:li_len//2-1], 'left')
-            add_node(node.left, nums[li_len//2+1:], 'right')
+        if dir == "left":
+            node.left = Node(nums[li_len // 2])
+            add_node(node.left, nums[: li_len // 2 - 1], "left")
+            add_node(node.left, nums[li_len // 2 + 1 :], "right")
             print(node.left.val)
-        if dir == 'right':
-            node.right = Node(nums[li_len//2])
+        if dir == "right":
+            node.right = Node(nums[li_len // 2])
             print(node.right.val)
-            add_node(node.right, nums[:li_len//2-1], 'left')
-            add_node(node.right, nums[li_len//2+1:], 'right')
+            add_node(node.right, nums[: li_len // 2 - 1], "left")
+            add_node(node.right, nums[li_len // 2 + 1 :], "right")
 
-    add_node(node, nums[:li_len//2], 'left')
-    add_node(node, nums[li_len//2:], 'right')
+    add_node(node, nums[: li_len // 2], "left")
+    add_node(node, nums[li_len // 2 :], "right")
     return node
-    '''
+    """
     node = list_to_tree([-10, -3, 0, 5, 9])
     print(node.val, node.left.val, node.left.left, node.left.right)
     print(node.right.val, node.right.right, node.right.left)
-    '''
+    """
 
 
 def buy_sell(prices):
     money_sum = 0
-    for i in range(len(prices)-1):
-        if prices[i] < prices[i+1]:
-            money_sum += prices[i+1] - prices[i]
+    for i in range(len(prices) - 1):
+        if prices[i] < prices[i + 1]:
+            money_sum += prices[i + 1] - prices[i]
     return money_sum
-    '''
+    """
     print(buy_sell([7,1,5,3,6,4]))
     print(buy_sell([1,2,3,4,5]))
-    '''
+    """
 
 
 def word_puzzle(s, word_Dict):
     result = [False]
 
     def erase_s(left_s):
-        if left_s == '':
+        if left_s == "":
             result.append(True)
             return
         for i in word_Dict:
             split_word = left_s.split(i, maxsplit=1)
-            if split_word[0] == '':
+            if split_word[0] == "":
                 erase_s(split_word[1])
+
     erase_s(s)
     return result[-1]
 
 
-'''
+"""
     s = 'leetcode'
     word_Dict = ["leet", "code"]
     print(word_puzzle(s, word_Dict))
@@ -1649,7 +1647,7 @@ def word_puzzle(s, word_Dict):
     s = 'catsandog'
     word_Dict = ["cats", "dog", "sand", "and", "cat"]
     print(word_puzzle(s, word_Dict))
-'''
+"""
 
 
 def middle_node(ln):
@@ -1661,14 +1659,15 @@ def middle_node(ln):
         preorder(ln.left)
         node_li.append(ln.val)
         preorder(ln.right)
+
     preorder(ln)
     return node_li
 
 
-'''
+"""
     ln, ln.right, ln.right.left = Node(1), Node(2), Node(3)
     print(middle_node(ln))
-'''
+"""
 
 
 class Node:
@@ -1695,7 +1694,7 @@ def linked_li_move(ln, x):
     return re_ln.right
 
 
-'''
+"""
     ln, ln.right, ln.right.right = Node(1), Node(4), Node(3)
     ln.right.right.right, ln.right.right.right.right = Node(2), Node(5)
     ln.right.right.right.right.right = Node(2)
@@ -1703,11 +1702,12 @@ def linked_li_move(ln, x):
     while b:
         print(b.val)
         b = b.right
-'''
+"""
 
 
 def small_height_root(n, edges):
     from collections import defaultdict
+
     root_dic = defaultdict(list)
     for i, j in edges:
         root_dic[i].append(j)
@@ -1723,11 +1723,11 @@ def small_height_root(n, edges):
     return [i for i in root_dic.keys()]
 
 
-'''
+"""
     n = 6
     edges = [[3, 0], [3,1], [3,2], [3,4], [5,4]]
     print(small_height_root(n, edges))
-'''
+"""
 
 
 class Node:
@@ -1747,23 +1747,24 @@ def valid_tree(ln):
         right = order(ln.right)
         cur = ln.val
         if left == None:
-            left = cur-1
+            left = cur - 1
         if right == None:
-            right = cur+1
+            right = cur + 1
         if cur > left and cur < right:
             pass
         else:
             result.append(False)
         return cur
+
     order(ln)
     return result[-1]
 
 
-'''
+"""
     ln, ln.left, ln.right = Node(5), Node(1), Node(4)
     ln.right.left, ln.right.right = Node(3), Node(6)
     print(valid_tree(ln))
-'''
+"""
 
 
 def linked_nums(nums):
@@ -1782,20 +1783,22 @@ def linked_nums(nums):
     return max_time
 
 
-'''
+"""
 nums = [100, 4, 200, 1, 3, 2]
 # nums = [0, 3, 7, 2, 5, 8, 4, 6, 0, 1]
 print(linked_nums(nums))
-'''
+"""
 
 # call by reference (assignment)
 # call by value
+
 
 class Node:
     def __init__(self, val):
         self.left = None
         self.right = None
         self.val = val
+
 
 def tree_to_llist(ln):
     def order(ln):
@@ -1817,8 +1820,9 @@ def tree_to_llist(ln):
             else:
                 ln.left = ln.right
                 ln.right = None
+
     order(ln)
-    '''
+    """
     ln, ln.left, ln.left.left, ln.left.right = Node(1), Node(2), Node(3), Node(4)
     ln.right, ln.right.right = Node(5), Node(6)
     tree_to_llist(ln)
@@ -1827,20 +1831,27 @@ def tree_to_llist(ln):
         if ln.right:
             print(ln.right.val, "right")
         ln = ln.left
-    '''
+    """
+
 
 class MinStack:
     def __init__(self):
         self.stack = []
+
     def push(self, val):
         self.stack.append(val)
+
     def pop(self):
         self.stack.pop()
+
     def top(self):
         return self.stack[-1]
+
     def getMin(self):
         return min(self.stack)
-'''
+
+
+"""
 minStack = MinStack()
     minStack.push(-2)
     minStack.push(0)
@@ -1849,7 +1860,8 @@ minStack = MinStack()
     minStack.pop()
     print(minStack.top())
     print(minStack.getMin())
-'''
+"""
+
 
 class Node:
     def __init__(self, val):
@@ -1857,8 +1869,10 @@ class Node:
         self.right = None
         self.val = val
 
+
 def twobinaryTreeRight(ln):
     import copy
+
     result_li = []
     que = [ln]
     while que:
@@ -1871,12 +1885,14 @@ def twobinaryTreeRight(ln):
             if last.right:
                 que.append(last.right)
     print(result_li)
-'''
+
+
+"""
 ln, ln.left, ln.left.right = Node(1), Node(2), Node(5)
 ln.right, ln.right.right = Node(3), Node(4)
 twobinaryTreeRight(ln)
-'''
+"""
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass
