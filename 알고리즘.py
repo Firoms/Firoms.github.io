@@ -1970,7 +1970,60 @@ def sliding_window(nums, k):
     print(sliding_window(nums, k))
 '''
 
+# 2개의 중복되는 숫자 찾기
+def two_same_num(nums):
+    while nums:
+        num = nums.pop()
+        if num in nums:
+            return num
+'''
+    nums = [1,3,4,2,2]
+    print(two_same_num(nums))
+    nums = [3,1,3,4,2]
+    print(two_same_num(nums))
+'''
 
+def add_same_list(lists):
+    lists.sort()
+    result_li = []
+    while lists:
+        last_li = lists.pop()
+        if lists:
+            secl_li = lists.pop()
+        else:
+            result_li = [last_li] + result_li
+            break
+        if last_li[0] <= secl_li[1]:
+            lists.append([secl_li[0], last_li[1]])
+        else:
+            result_li = [last_li] + result_li
+            lists.append(secl_li)
+    return result_li    
+'''
+    lists = [[1,3], [2,6], [6,10], [15,18]]
+    print(add_same_list(lists))
+    print(lists)
+'''
+class Node:
+    def __init__(self, val):
+        self.left = None
+        self.right = None
+        self.val = val
+
+def tree_line_sum(ln):
+    sum_list = []
+    def last_mid(ln):
+        if not ln:
+            return 0
+        left_val = max(last_mid(ln.left), 0)
+        right_val = max(last_mid(ln.right), 0)
+        cur_val = ln.val
+        sum_list.append(left_val+right_val+cur_val)
+        return max([left_val+cur_val, right_val+cur_val])
+    last_mid(ln)
+    return max(sum_list)
 
 if __name__ == "__main__":
-    pass
+    ln, ln.left, ln.right = Node(-10), Node(9), Node(20)
+    ln.right.left, ln.right.right = Node(15), Node(7)
+    print(tree_line_sum(ln))
