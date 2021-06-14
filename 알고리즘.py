@@ -1896,21 +1896,25 @@ twobinaryTreeRight(ln)
 # 이진 탐색 트리의 범위 합
 def sum_tree(ln, low, high):
     sum_li = []
+
     def go_down(ln):
-        if ln==None:
+        if ln == None:
             return
         else:
             if low <= ln.val <= high:
                 sum_li.append(ln.val)
         go_down(ln.left)
         go_down(ln.right)
+
     go_down(ln)
     return sum(sum_li)
-'''
+
+
+"""
     ln, ln.left, ln.left.left, ln.left.right = Node(10), Node(5), Node(3), Node(7)
     ln.right, ln.right.right = Node(15), Node(18)
     print(sum_tree(ln, 7, 15))
-'''
+"""
 
 # 합이 가장 큰 연속적인 하위 배열
 def linked_sum_big(li):
@@ -1919,27 +1923,27 @@ def linked_sum_big(li):
     num = False
     num_plus = 0
     for i in li:
-        if i>0:
-            num_check=True
+        if i > 0:
+            num_check = True
         else:
-            num_check=False
-        if num==num_check:
+            num_check = False
+        if num == num_check:
             num_plus += i
         else:
             new_li.append(num_plus)
-            num_plus=i
+            num_plus = i
         num = num_check
     new_li.append(num_plus)
-    if len(new_li)==1:
-        if new_li[0]>=0:
+    if len(new_li) == 1:
+        if new_li[0] >= 0:
             return new_li[0]
         else:
             return max(li)
     new_li.append(0)
     sum_li = []
     for i in range(len(new_li)):
-        if new_li[i]<0:
-            if new_li[i]+new_li[i+1]>=0:
+        if new_li[i] < 0:
+            if new_li[i] + new_li[i + 1] >= 0:
                 sum_num += new_li[i]
             else:
                 sum_li.append(sum_num)
@@ -1950,25 +1954,28 @@ def linked_sum_big(li):
             sum_num = 0
     sum_li.append(sum_num)
     return sum(sum_li)
-    '''
+    """
     # li = [-2, 1, -3, 4, -1, 2, 1, -5, 4, 100]
     li = [-3, -2, 5, -6, -8]
     print(linked_sum_big(li))
-    '''
+    """
+
 
 # 슬라이딩 윈도우
 def sliding_window(nums, k):
     output = []
-    for i in range(len(nums)+1-k):
+    for i in range(len(nums) + 1 - k):
         j = i + k
         li = nums[i:j]
         output.append(max(li))
     return output
-'''
+
+
+"""
     nums = [1, 3, -1, -3, 5, 3, 6, 7]
     k = 3
     print(sliding_window(nums, k))
-'''
+"""
 
 # 2개의 중복되는 숫자 찾기
 def two_same_num(nums):
@@ -1976,12 +1983,15 @@ def two_same_num(nums):
         num = nums.pop()
         if num in nums:
             return num
-'''
+
+
+"""
     nums = [1,3,4,2,2]
     print(two_same_num(nums))
     nums = [3,1,3,4,2]
     print(two_same_num(nums))
-'''
+"""
+
 
 def add_same_list(lists):
     lists.sort()
@@ -1998,30 +2008,38 @@ def add_same_list(lists):
         else:
             result_li = [last_li] + result_li
             lists.append(secl_li)
-    return result_li    
-'''
+    return result_li
+
+
+"""
     lists = [[1,3], [2,6], [6,10], [15,18]]
     print(add_same_list(lists))
     print(lists)
-'''
+"""
+
+
 class Node:
     def __init__(self, val):
         self.left = None
         self.right = None
         self.val = val
 
+
 def tree_line_sum(ln):
     sum_list = []
+
     def last_mid(ln):
         if not ln:
             return 0
         left_val = max(last_mid(ln.left), 0)
         right_val = max(last_mid(ln.right), 0)
         cur_val = ln.val
-        sum_list.append(left_val+right_val+cur_val)
-        return max([left_val+cur_val, right_val+cur_val])
+        sum_list.append(left_val + right_val + cur_val)
+        return max([left_val + cur_val, right_val + cur_val])
+
     last_mid(ln)
     return max(sum_list)
+
 
 if __name__ == "__main__":
     ln, ln.left, ln.right = Node(-10), Node(9), Node(20)
