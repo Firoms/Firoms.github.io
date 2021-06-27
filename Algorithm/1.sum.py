@@ -25,5 +25,6 @@ class Solution:
 if __name__ == "__main__":
     op1 = Solution().sum1(1, 100)
     print(op1)
+
     op2 = Solution().sum2(1, 100)
     print(op2)
