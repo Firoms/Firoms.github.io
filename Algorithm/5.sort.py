@@ -9,6 +9,9 @@ Output : [1, 2, 3, 4, 5]
 
 class Solution:
     def select_sort(self, nums: list):
+        # 선택 정렬
+        # 리스트에서 최소값을 찾아 앞에다가 둔다.
+        # O(n제곱)
         return op
 
 
