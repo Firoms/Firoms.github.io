@@ -1,11 +1,5 @@
 import random
 from datetime import datetime
-
-# cmd pip , pip list, pip install virtualenv
-# virtualenv 파일명 , cd 파일명, dir, cd Scripts, activate.bat
-# 탭탭 자동완성  //// 가상환경에 넣을  파일 찾아가기
-# 시스템 속성 path
-# test >> assert
 class User:
     def __init__(self):
         self.name = input("유저 이름을 말해주세요\n")

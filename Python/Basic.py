@@ -15,7 +15,7 @@ print(str(a) + "+" + str(b) + "=" + str(a + b))
 print(f"{a}+{b}={a+b}")
 
 print("안녕하세요.", end=" ")  # 자동 엔터가 싫은경우
-print("저는 박민성입니다.")
+print("저는 000입니다.")
 
 # operator
 print(f"{a}+{b}={a+b}")
