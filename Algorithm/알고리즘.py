@@ -2,20 +2,6 @@ from collections import defaultdict
 from string import ascii_uppercase
 
 
-def find_num(num, list_):
-    last = len(list_) - 1
-    first = 0
-    while first < last:
-        avg = (last + first) // 2
-        if num < list_[avg]:
-            last = avg - 1
-        elif num > list_[avg]:
-            first = avg + 1
-        else:
-            return avg
-    return None
-
-
 def same_str(text):
     text_len = len(text)
     check = -1
