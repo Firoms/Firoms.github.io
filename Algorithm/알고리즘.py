@@ -1,23 +1,4 @@
-from collections import defaultdict
-from string import ascii_uppercase
-
-
-def same_str(text):
-    text_len = len(text)
-    check = -1
-    back_c = text_len
-    for i in range(text_len // 2 + 1):
-        check += 1
-        back_c -= 1
-        if text[check] != text[back_c]:
-            return False
-
-    return True
-
-
 # 병합 정렬
-
-
 def bh(li1, length):
     li = li1
     for i in range(0, len(li), length * 2):
@@ -695,6 +676,7 @@ def jump_game(li):
 
 
 def excel(num):
+    from string import ascii_uppercase
     alp_list = list(ascii_uppercase)
     excel_num = num // 702
     if num % 702 != 0:
@@ -715,6 +697,7 @@ def excel(num):
 
 
 def alp_print(str_input):
+    from string import ascii_uppercase
     alp_list = list(ascii_uppercase)
     print_sum = 0
     str_input = "A" + str_input
