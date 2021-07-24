@@ -25,7 +25,6 @@ class Solution:
         return -1
 
 
-
 if __name__ == "__main__":
     nums = [1, 4, 5, 6, 7, 8, 9, 10]
     num = 8

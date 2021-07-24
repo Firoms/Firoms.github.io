@@ -23,12 +23,10 @@ class Solution:
         return True
 
 
-
 if __name__ == "__main__":
-    text = 'HEGEH'
+    text = "HEGEH"
     op = Solution().palindrome(text)
     print(op)
-    text = 'HHGGDD'
+    text = "HHGGDD"
     op = Solution().palindrome(text)
     print(op)
-

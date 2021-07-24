@@ -677,6 +677,7 @@ def jump_game(li):
 
 def excel(num):
     from string import ascii_uppercase
+
     alp_list = list(ascii_uppercase)
     excel_num = num // 702
     if num % 702 != 0:
@@ -698,6 +699,7 @@ def excel(num):
 
 def alp_print(str_input):
     from string import ascii_uppercase
+
     alp_list = list(ascii_uppercase)
     print_sum = 0
     str_input = "A" + str_input
@@ -2009,71 +2011,82 @@ def tree_line_sum(ln):
 
     last_mid(ln)
     return max(sum_list)
-'''
+
+
+"""
     ln, ln.left, ln.right = Node(-10), Node(9), Node(20)
     ln.right.left, ln.right.right = Node(15), Node(7)
     print(tree_line_sum(ln))
-'''
+"""
 # 수조에 물 채우기
 def water_sink(nums):
     left_wall = 0
-    right_wall = len(nums)-1
+    right_wall = len(nums) - 1
     max_water = 0
     while left_wall < right_wall:
-        water = min(nums[left_wall], nums[right_wall])*(right_wall-left_wall)
+        water = min(nums[left_wall], nums[right_wall]) * (right_wall - left_wall)
         max_water = max(water, max_water)
         if nums[left_wall] <= nums[right_wall]:
             left_wall += 1
         else:
             right_wall -= 1
     return max_water
-'''
+
+
+"""
     nums = [1, 8, 6, 2, 5, 4, 8, 3, 7]
     # nums = [4, 3, 2, 1, 4]
     print(water_sink(nums))
-'''
+"""
+
+
 class Node:
     def __init__(self, val):
         self.left = None
         self.right = None
         self.val = val
+
+
 # 대칭 트리
 class Mirror_tree:
     def __init__(self, ln):
         self.ln = ln
         self.result = True
         self.check_ln(ln.left, ln.right)
+
     def check_ln(self, ln1, ln2):
-        if ln1==None and ln2==None:
+        if ln1 == None and ln2 == None:
             return
-        elif ln1==None and ln2!=None:
+        elif ln1 == None and ln2 != None:
             self.result = False
-        elif ln1!=None and ln2==None:
+        elif ln1 != None and ln2 == None:
             self.result = False
-        if ln1.val!=ln2.val:
+        if ln1.val != ln2.val:
             self.result = False
 
         self.check_ln(ln1.left, ln2.right)
         self.check_ln(ln1.right, ln2.left)
-    
+
     def __str__(self):
         return str(self.result)
 
-'''
+
+"""
     ln, ln.left, ln.right = Node(1), Node(2), Node(2)
     ln.left.left, ln.left.right = Node(3), Node(4)
     ln.right.left, ln.right.right = Node(4), Node(3)
     result = Mirror_tree(ln)
     print(result)
-'''
+"""
 
 # 가장 많은 같은 단어
 def most_word(paragraph, banned):
     from collections import defaultdict
     import operator
+
     word_dict = defaultdict(int)
     words = paragraph.split()
-    erase_list = ['.', ',']
+    erase_list = [".", ","]
     for i in words:
         i = i.lower()
         if i[-1] in erase_list:
@@ -2081,22 +2094,25 @@ def most_word(paragraph, banned):
         if i not in banned:
             word_dict[i] += 1
     return max(word_dict.items(), key=operator.itemgetter(1))[0]
-'''
+
+
+"""
     paragraph = "Bob hit a ball, the BALL flew far after it was hit."
     banned = ["hit"]
     op = most_word(paragraph, banned)
     print(op)
-'''
+"""
 
 # 가장 긴 연속적인 숫자
 def long_go_num(nums):
     from collections import defaultdict
+
     long_dict = defaultdict(int)
     long_dict[nums[0]] = 1
     for i in nums[1:]:
         long_list = sorted(long_dict, key=long_dict.get, reverse=True)
         for j in long_list:
-            if j<i:
+            if j < i:
                 long_dict[i] = long_dict[j] + 1
                 break
         if i not in long_dict:

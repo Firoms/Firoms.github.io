@@ -1,5 +1,7 @@
 import random
 from datetime import datetime
+
+
 class User:
     def __init__(self):
         self.name = input("유저 이름을 말해주세요\n")
