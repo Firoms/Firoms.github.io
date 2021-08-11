@@ -2118,29 +2118,34 @@ def long_go_num(nums):
         if i not in long_dict:
             long_dict[i] = 1
     return max([i for i in long_dict.values()])
-'''
+
+
+"""
     nums = [10, 9, 2, 5, 3, 7, 101, 18]
     op = long_go_num(nums)
     print(op)
-'''
+"""
 
 # 이진검색
 def twoPointSearch(nums, target):
     startPoint = 0
-    endPoint = len(nums)-1
+    endPoint = len(nums) - 1
     while startPoint < endPoint:
-        searchPoint = (startPoint+endPoint)//2
+        searchPoint = (startPoint + endPoint) // 2
         if nums[searchPoint] == target:
             return searchPoint
         elif nums[searchPoint] > target:
-            endPoint = searchPoint-1
+            endPoint = searchPoint - 1
         else:
-            startPoint = searchPoint+1
+            startPoint = searchPoint + 1
     return None
-'''
+
+
+"""
     result = twoPointSearch([-1, 0, 3, 5, 9, 12], 9)
     print(result)
-'''
+"""
+
 
 class Node:
     def __init__(self, val):
@@ -2148,27 +2153,30 @@ class Node:
         self.right = None
         self.val = val
 
+
 # 이진트리 탐색
 def twoBinaryTreeSearch(ln):
     outputList = []
-    
+
     def appendList(ln, line):
         if not ln:
             return
-        if len(outputList)<line:
+        if len(outputList) < line:
             outputList.append([])
-        outputList[line-1].append(ln.val)
-        appendList(ln.left, line+1)
-        appendList(ln.right, line+1)
+        outputList[line - 1].append(ln.val)
+        appendList(ln.left, line + 1)
+        appendList(ln.right, line + 1)
 
     appendList(ln, 1)
     return outputList
-'''
+
+
+"""
     ln, ln.left, ln.right = Node(3), Node(9), Node(20)
     ln.right.left, ln.right.right = Node(15), Node(7)
     result = twoBinaryTreeSearch(ln)
     print(result)
-'''
+"""
 
 # 쿠키할당
 def giveCookies(g, s):
@@ -2181,29 +2189,30 @@ def giveCookies(g, s):
             if person <= s[cookieNum]:
                 satisfied += 1
                 break
-            if cookieNum>=len(s)-1:
+            if cookieNum >= len(s) - 1:
                 break
             cookieNum += 1
     return satisfied
-'''
+
+
+"""
     g = [10, 9, 8, 7]
     s = [5, 6, 7, 8]
     g = [1,2,3]
     s = [1,1]
     print(giveCookies(g, s))
-'''
+"""
 
 # task 할당
 def giveTasks(tasks, n):
     from collections import defaultdict
+
     taskDict = defaultdict(int)
     taskList = []
     for i in tasks:
         taskDict[i] += 1
     for key, val in taskDict.items():
         taskList.append([val, key])
-
-
 
     memory = []
     complete = []
@@ -2215,22 +2224,23 @@ def giveTasks(tasks, n):
                 taskList[num][0] -= 1
                 complete.append(task[1])
                 memory.append(task[1])
-                
-                if len(memory)>n:
+
+                if len(memory) > n:
                     memory = memory[1:]
                 if taskList[num][0] == 0:
                     taskList.pop(num)
                 break
-        if cntComplete==1+len(complete):
-            complete.append('rest')
-            memory.append('rest')
-            if len(memory)>n:
+        if cntComplete == 1 + len(complete):
+            complete.append("rest")
+            memory.append("rest")
+            if len(memory) > n:
                 memory = memory[1:]
         cntComplete += 1
     return len(complete), complete
 
+
 if __name__ == "__main__":
-    tasks = ['A', 'A', 'A', 'B', 'B', 'B']
+    tasks = ["A", "A", "A", "B", "B", "B"]
     n = 2
     result = giveTasks(tasks, n)
     print(result)
