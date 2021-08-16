@@ -1,3 +1,5 @@
+# 백준 알고리즘 랜덤 문제 자동화로 연속 제출 프로그램
+# 계속해서 재채출 시간이 증가함
 import pyautogui
 import time
 
