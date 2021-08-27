@@ -9,17 +9,17 @@ Output : 5050
 
 class Solution:
     def sum1(self, n: int, m: int):
-        sum_value = 0
+        sumValue = 0
 
         for i in range(n, m + 1):
-            sum_value += i
+            sumValue += i
 
-        return sum_value
+        return sumValue
 
     def sum2(self, n: int, m: int):
-        sum_value = (m + n) * (m - n + 1) // 2
+        sumValue = (m + n) * (m - n + 1) // 2
 
-        return sum_value
+        return sumValue
 
 
 if __name__ == "__main__":
