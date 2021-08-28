@@ -11,25 +11,25 @@ Output : 1) 5
 
 
 class Solution:
-    def find_num(self, nums: list, num: int):
-        end_point = len(nums) - 1
-        start_point = 0
-        while start_point < end_point:
-            avg_idx = (start_point + end_point) // 2
-            if num < nums[avg_idx]:
-                end_point = avg_idx - 1
-            elif num > nums[avg_idx]:
-                start_point = avg_idx + 1
+    def findNum(self, nums: list, num: int):
+        endPoint = len(nums) - 1
+        startPoint = 0
+        while startPoint < endPoint:
+            avgIdx = (startPoint + endPoint) // 2
+            if num < nums[avgIdx]:
+                endPoint = avgIdx - 1
+            elif num > nums[avgIdx]:
+                startPoint = avgIdx + 1
             else:
-                return avg_idx
+                return avgIdx
         return -1
 
 
 if __name__ == "__main__":
     nums = [1, 4, 5, 6, 7, 8, 9, 10]
     num = 8
-    op = Solution().find_num(nums, num)
+    op = Solution().findNum(nums, num)
     print(op)
     num = 13
-    op = Solution().find_num(nums, num)
+    op = Solution().findNum(nums, num)
     print(op)
