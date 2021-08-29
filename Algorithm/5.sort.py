@@ -18,6 +18,7 @@ class Solution:
         # 병합정렬
         return op
 
+
 if __name__ == "__main__":
     nums = [2, 4, 5, 1, 3]
 
