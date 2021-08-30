@@ -11,13 +11,13 @@ Output : 1) True
 
 class Solution:
     def palindrome(self, text: str):
-        text_len = len(text)
+        textLen = len(text)
         check = -1
-        back_c = text_len
-        for i in range(text_len // 2 + 1):
+        backC = textLen
+        for i in range(textLen // 2 + 1):
             check += 1
-            back_c -= 1
-            if text[check] != text[back_c]:
+            backC -= 1
+            if text[check] != text[backC]:
                 return False
 
         return True
