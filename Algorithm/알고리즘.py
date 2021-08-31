@@ -2238,9 +2238,71 @@ def giveTasks(tasks, n):
         cntComplete += 1
     return len(complete), complete
 
-
-if __name__ == "__main__":
+'''
     tasks = ["A", "A", "A", "B", "B", "B"]
     n = 2
     result = giveTasks(tasks, n)
     print(result)
+'''
+
+
+# 공통 prefix 찾기
+def findPrefix(strs:list):
+    lengths = [len(i) for i in strs]
+    prefix = ""
+    for i in range(min(lengths)):
+        alp = strs[0][i]
+        for j in strs:
+            if j[i]!=alp:
+                return prefix
+        prefix += alp
+'''
+    strs = ["flower", "flow", "flight"]
+    prefix = findPrefix(strs)
+    print(prefix)
+'''
+
+# 동일한 트리 판별
+def sameTree(ln1, ln2):
+    if ln1.val != ln2.val:
+        return False
+
+    if ln1.left and ln2.left:
+        result = sameTree(ln1.left, ln2.left)
+        if result == False:
+            return False
+    elif not ln1.left and not ln2.left:
+        pass
+    else:
+        return False
+
+
+    if ln1.right and ln2.right:
+        result = sameTree(ln1.right, ln2.right)
+        if result == False:
+            return False
+    elif not ln1.right and not ln2.right:
+        pass
+    else:
+        return False
+        
+    return True
+
+'''
+    ln1, ln1.left, ln1.right = Node(1), Node(2), Node(3)
+    ln2, ln2.left, ln2.right = Node(1), Node(2), Node(3)
+    result = sameTree(ln1, ln2)
+    print(result)
+'''
+
+# 레이블 나누기
+def 
+
+
+if __name__ == "__main__":
+    pass
+
+
+
+
+# backend roadmap
