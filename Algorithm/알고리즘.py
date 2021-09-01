@@ -2238,29 +2238,32 @@ def giveTasks(tasks, n):
         cntComplete += 1
     return len(complete), complete
 
-'''
+
+"""
     tasks = ["A", "A", "A", "B", "B", "B"]
     n = 2
     result = giveTasks(tasks, n)
     print(result)
-'''
+"""
 
 
 # 공통 prefix 찾기
-def findPrefix(strs:list):
+def findPrefix(strs: list):
     lengths = [len(i) for i in strs]
     prefix = ""
     for i in range(min(lengths)):
         alp = strs[0][i]
         for j in strs:
-            if j[i]!=alp:
+            if j[i] != alp:
                 return prefix
         prefix += alp
-'''
+
+
+"""
     strs = ["flower", "flow", "flight"]
     prefix = findPrefix(strs)
     print(prefix)
-'''
+"""
 
 # 동일한 트리 판별
 def sameTree(ln1, ln2):
@@ -2276,7 +2279,6 @@ def sameTree(ln1, ln2):
     else:
         return False
 
-
     if ln1.right and ln2.right:
         result = sameTree(ln1.right, ln2.right)
         if result == False:
@@ -2285,24 +2287,23 @@ def sameTree(ln1, ln2):
         pass
     else:
         return False
-        
+
     return True
 
-'''
+
+"""
     ln1, ln1.left, ln1.right = Node(1), Node(2), Node(3)
     ln2, ln2.left, ln2.right = Node(1), Node(2), Node(3)
     result = sameTree(ln1, ln2)
     print(result)
-'''
+"""
 
 # 레이블 나누기
-def 
+# def
 
 
 if __name__ == "__main__":
     pass
-
-
 
 
 # backend roadmap
