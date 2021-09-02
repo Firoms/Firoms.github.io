@@ -16,7 +16,23 @@ class Solution:
 
     def mergeSort(self, nums: list):
         # 병합정렬
-        return op
+        length = len(nums)
+        for i in range(0, len(nums), length * 2):
+            for j in range(i, i + length):
+                for k in range(i + length, i + length + length):
+                    try:
+                        if nums[j] >= nums[k]:
+                            nums[j], nums[k] = nums[k], nums[j]
+                            print(nums, length)
+                    except:
+                        pass
+        sum = 0
+        for i in range(len(nums) - 1):
+            if nums[i] <= nums[i + 1]:
+                sum = sum + 1
+        if sum == (len(nums) - 1):
+            return nums
+        return self.mergeSort(nums, length * 2)
 
 
 if __name__ == "__main__":
