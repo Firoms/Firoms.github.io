@@ -1,23 +1,3 @@
-# 병합 정렬
-def bh(li1, length):
-    li = li1
-    for i in range(0, len(li), length * 2):
-        for j in range(i, i + length):
-            for k in range(i + length, i + length + length):
-                try:
-                    if li[j] >= li[k]:
-                        li[j], li[k] = li[k], li[j]
-                        print(li, length)
-                except:
-                    pass
-    sum = 0
-    for i in range(len(li) - 1):
-        if li[i] <= li[i + 1]:
-            sum = sum + 1
-    if sum == (len(li) - 1):
-        return li
-    return bh(li, length * 2)
-
     # name = ["Tom", "Jerry","Mike","Tom"]
     # name_set = list(set(name))
     # for i in name_set:
