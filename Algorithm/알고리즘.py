@@ -1,23 +1,3 @@
-    # name = ["Tom", "Jerry","Mike","Tom"]
-    # name_set = list(set(name))
-    # for i in name_set:
-    #     name.remove(i)
-    # print(name)
-
-
-def same_name(name):
-    name_list = []
-    name_dic = {}
-    for i in name:
-        if i in name_dic:
-            # name_list.append(i)
-            name_dic[i] += 1
-        else:
-            name_dic[i] = 1
-
-    return name_list
-
-
 def change_list():
     r = [1, 2]
     print(id(r), r)
