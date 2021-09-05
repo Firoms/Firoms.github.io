@@ -1,18 +1,3 @@
-def change_list():
-    r = [1, 2]
-    print(id(r), r)
-    r += [3, 4]
-    print(id(r), r)
-
-    s = (1, 2)
-    print(id(s), s)
-    s += (3, 4)
-    print(id(s), s)
-    """
-    change_list()
-    """
-
-
 def add_last(m, n):
     m += n
     print(m)
