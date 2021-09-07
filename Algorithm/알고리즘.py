@@ -9,16 +9,6 @@ def add_last(m, n):
     print(r,t)
     """
     
-def min_max_tuple(d):
-    d = list(d)
-    d.sort()
-    print(d[0], d[-1], sep=",")
-    """
-    t = (3,1,5,4)
-    min_max_tuple(t)
-    print(t)
-    """
-
 
 def find_friend(info, name):
     friend_list = []
