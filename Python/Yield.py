@@ -5,11 +5,13 @@ def gen_num():
     yield 2
     print("third number")
     yield 3
-    """
-    # gen_num()
-    # print(type(gen_num()))
-    gen = gen_num()
-    next(gen)
-    next(gen)
-    next(gen)
-    """
+
+
+
+
+gen_num()
+print(type(gen_num()))
+gen = gen_num()
+next(gen)
+next(gen)
+next(gen)
