@@ -1,3 +1,9 @@
+'''
+Yield
+Yield는
+'''
+
+
 def gen_num():
     print("first number")
     yield 1
@@ -7,11 +13,10 @@ def gen_num():
     yield 3
 
 
-
-
-gen_num()
-print(type(gen_num()))
-gen = gen_num()
-next(gen)
-next(gen)
-next(gen)
+if __name__ == "__main__":    
+    gen_num()
+    print(type(gen_num()))
+    gen = gen_num()
+    next(gen)
+    next(gen)
+    next(gen)
