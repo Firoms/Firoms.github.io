@@ -1,6 +1,7 @@
 '''
 Yield
-Yield는
+Yield는 generator 생성자라 볼 수 있다.
+iterator와 비슷하다.
 '''
 
 
