@@ -19,6 +19,5 @@ if __name__ == "__main__":
     genNum()
     print(type(genNum()))
     gen = genNum()
-    next(gen)
-    next(gen)
-    next(gen)
+    for i in range(3):
+        next(gen)
