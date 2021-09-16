@@ -1,7 +1,7 @@
 '''
 Yield
-Yield는 generator 생성자라 볼 수 있다.
-iterator와 비슷하다.
+Yield는 generator를 생성해주는 키워드이다.
+iterator를 생성해주는 함수를 generator이다.
 range 자료형을 만든 원리로 볼 수 있을 것 같다.
 '''
 
