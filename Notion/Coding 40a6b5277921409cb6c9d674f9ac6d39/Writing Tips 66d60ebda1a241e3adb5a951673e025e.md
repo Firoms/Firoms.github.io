@@ -1,7 +1,0 @@
-# Writing Tips
-
----
-
-[코딩](Writing%20Tips%2066d60ebda1a241e3adb5a951673e025e/%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B5%E1%86%BC%20eaa088fc1ff24ef696d05e048e9bc641.md)
-
-[정리](Writing%20Tips%2066d60ebda1a241e3adb5a951673e025e/%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%203b3d23d7cbe146229c4f4a8c2781732e.md)

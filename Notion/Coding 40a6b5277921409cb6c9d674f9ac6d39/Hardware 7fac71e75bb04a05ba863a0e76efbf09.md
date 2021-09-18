@@ -1,5 +1,0 @@
-# Hardware
-
-<Memo>
-
-Character Encoding
