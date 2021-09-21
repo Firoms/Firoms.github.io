@@ -1,5 +1,6 @@
 """
 selenium을 사용하려면 라이브러리를 install 해줘야한다.
+chrome web driver 역시 인터넷에서 파일을 다운받아야 한다.
 또한, chrome web driver는 자신의 chrome 버전에 맞는 것을 사용해야한다는 것을 꼭 기억하자.
 """
 
