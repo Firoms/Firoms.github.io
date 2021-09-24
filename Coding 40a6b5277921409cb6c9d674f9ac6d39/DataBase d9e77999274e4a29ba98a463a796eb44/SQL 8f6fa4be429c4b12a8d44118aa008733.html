@@ -633,5 +633,14 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="8f6fa4be-429c-4b12-a8d4-4118aa008733" class="page serif"><header><h1 class="page-title">SQL</h1></header><div class="page-body"><hr id="d98b383b-dfd8-4cab-b0ed-8d833d1ac7b7"/><p id="abf4efb7-da22-446c-b111-ea5da97ccb43" class="">
+</style></head><body><article id="8f6fa4be-429c-4b12-a8d4-4118aa008733" class="page serif"><header><h1 class="page-title">SQL</h1></header><div class="page-body"><blockquote id="73db3f19-9674-4c40-88cd-a4d1c4110b6d" class=""><mark class="highlight-yellow_background">SQL</mark>은 Structured Query Language의 약자로 데이터를 관리하기 위한 언어이다.</blockquote><hr id="d98b383b-dfd8-4cab-b0ed-8d833d1ac7b7"/><p id="abf4efb7-da22-446c-b111-ea5da97ccb43" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b955c33f-bb01-48d5-bffc-78201a48d3a7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Table 생성하기</div></figure><p id="a22fb492-2b2c-409d-9bdd-21694bf91bb1" class="">Table을 생성하기 위해서는 CREATE를 이용한다.</p><pre id="4551e341-8c29-445a-b072-a8f7daa291d9" class="code"><code>CREATE TABLE &quot;&lt;Table 이름&gt;&quot;{
+	&quot;&lt;컬럼명&gt;&quot; &lt;데이터타입&gt; &lt;조건&gt;
+	&quot;&lt;컬럼명&gt;&quot; &lt;데이터타입&gt; &lt;조건&gt;
+	&quot;&lt;컬럼명&gt;&quot; &lt;데이터타입&gt; &lt;조건&gt;
+	...
+}</code></pre><p id="f546e4bd-24f0-4ea6-8ff0-343bc408c586" class="">위와 같은 형식으로 Table을 생성해주면 된다.</p><p id="dc548d3c-01f5-4138-9921-62a3e49d3b1d" class="">그러나 SQL으로 Table을 생성하는 것이 번거롭다면 그냥 DataBase GUI에서 직접 Table을 생성해주어도 된다.</p><p id="fca7a026-1eda-4291-9910-b0876621f6f5" class="">
+</p><p id="206a2cfd-b666-41d5-b534-22dbeea2a9bf" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ae26a2e5-b488-4a05-96df-bbc6af745d41"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Table에 데이터 삽입</div></figure><p id="c1ab2399-b68b-4ae1-a21c-1a3e65cd178b" class="">Table에 데이터 삽입을 위해서는 INSERT INTO를 이용한다.</p><pre id="d0afec16-8831-481a-89d7-b2868f9c97b5" class="code"><code>INSERT INTO &quot;&lt;Table 이름&gt;&quot; VALUES(&lt;&#x27;,&#x27;로 구분된 데이터 내용&gt;)</code></pre><p id="4de38c24-666f-464f-a75c-9908488dd4dc" class="">위와 같은 형식으로 Table에 데이터를 삽입할 수 있다.</p><p id="3594c703-8aab-4a26-98ec-03af4a5ee44a" class="">기본적으로 테이블의 모든 항의 데이터 내용을 입력해줘야하지만,</p><p id="f2b56a19-2816-432e-94ea-2a6905ccffff" class="">조건을 덧붙이면 원하는 항목만을 가지고 데이터를 추가할 수도 있다.</p><p id="cb8aba3f-c03d-46d8-bb6a-d90247b35526" class="">
+</p><p id="1fcad887-27c7-451b-bfb3-ba0146a2e284" class="">
 </p></div></article></body></html>
