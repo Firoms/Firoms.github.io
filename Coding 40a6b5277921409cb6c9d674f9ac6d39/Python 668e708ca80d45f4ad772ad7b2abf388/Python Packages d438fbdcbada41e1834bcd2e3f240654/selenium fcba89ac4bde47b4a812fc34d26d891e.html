@@ -634,4 +634,51 @@ blockquote {
 }
 	
 </style></head><body><article id="fcba89ac-4bde-47b4-a812-fc34d26d891e" class="page serif"><header><h1 class="page-title">selenium</h1></header><div class="page-body"><blockquote id="e415e5f3-99de-4969-8718-b1c5cc569b4a" class=""><mark class="highlight-yellow_background">selenium</mark>은 웹 자동화에 이용되는 파이썬 라이브러리다.</blockquote><hr id="3797fe51-d3b6-4e71-aedc-bd30d2c6656b"/><p id="2a026c54-7ae1-4747-8dc1-f43f9187945a" class="">
-</p></div></article></body></html>
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6305b840-1573-47e9-a553-e1a626591770"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">selenium 설치</div></figure><pre id="c87e36d7-73ba-4332-968d-cf0b674fa548" class="code"><code>$ pip install selenium</code></pre><p id="272ee2cf-5e7f-4f54-acb8-6104207a4c89" class="">selenium을 이용하기 위해서는 파이썬 패키지를 설치해주어야 한다.</p><p id="fec70849-5c38-48e0-aa82-cab4e7ae8ebe" class="">
+</p><p id="8c02ac60-b4d5-4b50-bb74-9c99ec004aed" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="d6cc74dd-0ab0-43f8-b2fb-12e090a554dc"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Chrome Web Driver 이용</div></figure><p id="8d7650a9-a621-4cdc-99ad-acf187816ee7" class=""><a href="https://chromedriver.chromium.org/downloads">https://chromedriver.chromium.org/downloads</a></p><p id="14af4e97-8041-4d54-a3b7-2b3c0dc00670" class="">위의 링크에서 자신의 Chrome 버전에 맞는 web driver을 다운로드 받아야 한다.</p><p id="d7d030ae-4f8f-4ddd-9360-50d13a1bb7bb" class="">파이썬에서 이용할 때, 상대 경로 또는 절대 경로로 파일 위치를 지정해주어야 한다는 것을 고려해 저장한다.</p><p id="6499553d-b24c-4456-8ea3-33e8fa99881e" class="">
+</p><p id="a3d7d7f5-21bb-4452-9c68-f475fd30e926" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="7eb0313c-b507-429c-8844-dc5d28647a01"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">자동화</div></figure><pre id="5142dd4b-a7ee-4579-addc-37e8686fa2f9" class="code"><code># 독서교육종합시스템 로그인 자동화 프로그램
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.add_argument(&quot;--start-fullscreen&quot;)
+
+URL = &quot;https://reading.gglec.go.kr/r/newReading/main/main.jsp&quot;
+
+id = input(&quot;id를 입력하세요: &quot;)
+pw = input(&quot;pw를 입력하세요: &quot;)
+driver = webdriver.Chrome(
+    executable_path=&quot;D:\\Coding\\Firoms_Note\\chromedriver.exe&quot;, chrome_options=options
+)
+
+driver.implicitly_wait(3)
+driver.get(URL)
+driver.implicitly_wait(3)
+driver.find_element_by_id(&quot;headerLoginBtn&quot;).click()
+driver.find_element_by_name(&quot;s_id&quot;).send_keys(id)
+driver.find_element_by_name(&quot;s_pwd&quot;).send_keys(pw)
+driver.find_element_by_id(&quot;s_login&quot;).click()
+driver.find_element_by_class_name(&quot;changeLater&quot;).click()</code></pre><pre id="287302cd-8ee3-45af-94fd-c5887e8b872d" class="code"><code># 컴시간 알리미 자동 검색 프로그램
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.add_argument(&quot;--start-fullscreen&quot;)
+URL = &quot;http://112.186.146.81:4082/st&quot;
+
+school = &quot;동탄고등학교&quot;
+driver = webdriver.Chrome(
+    executable_path=&quot;D:\\Coding\\Firoms_Note\\chromedriver.exe&quot;, options=options
+)
+driver.implicitly_wait(3)
+driver.get(URL)
+driver.implicitly_wait(3)
+driver.find_element_by_id(&quot;sc&quot;).send_keys(school)
+driver.find_elements_by_tag_name(&quot;input&quot;)[1].click()
+driver.find_element_by_link_text(&quot;동탄고등학교&quot;).click()
+driver.find_element_by_id(&quot;ba&quot;).click()
+driver.find_elements_by_tag_name(&quot;option&quot;)[33].click()
+driver.find_element_by_id(&quot;ba&quot;).click()</code></pre><p id="56bfd17b-15fa-4b7a-8b1b-676cb29feb3c" class="">
+</p><p id="fbc0c467-85c4-4e74-af23-8d499bdf4762" class="">위와 코드와 같이 selenium과 Chrome Web Driver을 이용해 웹 페이지 자동화를 할 수 있다.</p><p id="a79f2582-ce81-4929-9723-8d4a60551c9f" class="">간단히 코드를 살펴보면, 원하는 URL을 불러오고</p><p id="9385d828-0ed2-463e-a349-560c8852586e" class="">element 각각의 tag 속성을 이용하여 원하는 명령을 시킬 수 있다.</p><p id="ebd813b0-0660-4ba3-bf61-c6afe8522ea6" class="">자동화를 위해 필요한 명령어들은 너무 광범위하고 검색하면 금방 찾을 수 있다.</p></div></article></body></html>
