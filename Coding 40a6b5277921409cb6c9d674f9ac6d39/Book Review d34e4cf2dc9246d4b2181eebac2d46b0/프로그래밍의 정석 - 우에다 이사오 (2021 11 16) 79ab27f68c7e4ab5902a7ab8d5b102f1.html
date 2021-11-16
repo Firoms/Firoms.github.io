@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Project</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>프로그래밍의 정석 - 우에다 이사오 (2021/11/16)</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -653,114 +653,9 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="f2a59ee6-d3c8-43f8-ac28-cc453df388c0" class="page serif"><header><h1 class="page-title">Project</h1></header><div class="page-body"><p id="846cf2a5-5079-426f-af18-26a6a91756e2" class="">
-</p><pre id="1fc446a3-7397-4670-8592-581014809402" class="code"><code>import os
-import cv2
-import glob
-from alpGenerator import alpGenerator
-from PIL import Image, ImageDraw, ImageFont
-
-
-class makeLyricsVideo:
-    &#x27;&#x27;&#x27;
-    노래 가사 영상을 최대한 간편하게 제작할 수 있도록 도와주는 클래스
-    :param Name: 영상 이름
-    &#x27;&#x27;&#x27;
-
-    def __init__(self, Name: str) -&gt; None:
-        self.videoName = Name
-
-    def getLyrics(self):
-        &#x27;&#x27;&#x27;
-        영상에 들어갈 제목, 가수, 가사를 입력받는 함수
-        &#x27;&#x27;&#x27;
-        os.chdir(&#x27;../../Lyrics&#x27;)
-        os.mkdir(self.videoName)
-        print(f&quot;Lyrics/{self.videoName} 폴더 안에 생성된 lyrics.txt 파일에 가사를 입력해주세요.&quot;)
-        print(&#x27;첫번째 줄은 &quot;제목 - 가수&quot; 형식이어야 하며, 두번째 줄은 공백, 세번째 줄부터는 가사를 넣어주세요.&#x27;)
-        lyricsInput = input(&quot;저장 이후 파일을 닫고 엔터를 눌러주시면 진행됩니다. &quot;)
-
-
-    def makeImg(self) -&gt; None:
-        &#x27;&#x27;&#x27;
-        영상에 들어갈 가사가 적힌 사진을 만드는 함수
-        &#x27;&#x27;&#x27;
-        lyricsFile = open(
-            f&#x27;../../Lyrics/{self.videoName}/lyrics.txt&#x27;, &#x27;r&#x27;, encoding=&#x27;UTF8&#x27;)
-        titleLine = lyricsFile.readline()
-        title, singer = titleLine.split(&quot;-&quot;)
-        fontsFolder = &#x27;../../Fonts&#x27;
-        targetImage = Image.open(&#x27;../../Images/background/background.jfif&#x27;)
-        draw = ImageDraw.Draw(targetImage)
-        selectedFont = ImageFont.truetype(
-            os.path.join(fontsFolder, &#x27;GodoM.ttf&#x27;), 40)
-        draw.text((1240, 20), text=f&quot;Lyrics WFS&quot;, fill=&quot;#123152&quot;,
-                  font=selectedFont, align=&#x27;center&#x27;)
-        selectedFont = ImageFont.truetype(
-            os.path.join(fontsFolder, &#x27;GodoB.ttf&#x27;), 80)
-        draw.text((100, 350), text=f&quot;{title}&quot;,
-                  fill=&quot;Black&quot;, font=selectedFont, align=&#x27;center&#x27;)
-        selectedFont = ImageFont.truetype(
-            os.path.join(fontsFolder, &#x27;GodoM.ttf&#x27;), 60)
-        draw.text((1000, 550), text=f&quot;{singer}&quot;,
-                  fill=&quot;#575759&quot;, font=selectedFont, align=&#x27;center&#x27;)
-        targetImage.save(f&quot;../../Images/{self.videoName}/aa.jpg&quot;)
-        blankLine = lyricsFile.readline()
-
-        curLine1 = lyricsFile.readline()
-        curLine2 = lyricsFile.readline()
-        nextLine = lyricsFile.readline()
-        alps = list(alpGenerator())
-
-        idx = 0
-        while curLine1:
-            targetImage = Image.open(&#x27;../../Images/background/background.jfif&#x27;)
-            draw = ImageDraw.Draw(targetImage)
-            selectedFont = ImageFont.truetype(
-                os.path.join(fontsFolder, &#x27;GodoB.ttf&#x27;), 30)
-            draw.text(
-                (20, 20), text=f&quot;{titleLine}&quot;, fill=&quot;#5d7530&quot;, font=selectedFont, align=&#x27;center&#x27;)
-            selectedFont = ImageFont.truetype(
-                os.path.join(fontsFolder, &#x27;GodoM.ttf&#x27;), 40)
-            draw.text((1240, 20), text=f&quot;Lyrics WFS&quot;, fill=&quot;#123152&quot;,
-                      font=selectedFont, align=&#x27;center&#x27;)
-            selectedFont = ImageFont.truetype(
-                os.path.join(fontsFolder, &#x27;godoMaum.ttf&#x27;), 100)
-            draw.text(
-                (100, 300), text=f&quot;{curLine1}&quot;, fill=&quot;Black&quot;, font=selectedFont, align=&#x27;center&#x27;)
-            draw.text(
-                (100, 450), text=f&quot;{curLine2}&quot;, fill=&quot;Black&quot;, font=selectedFont, align=&#x27;center&#x27;)
-            draw.text(
-                (100, 780), text=f&quot;{nextLine}&quot;, fill=&quot;#575759&quot;, font=selectedFont, align=&#x27;center&#x27;)
-            targetImage.save(f&quot;../../Images/{self.videoName}/{alps[idx]}.jpg&quot;)
-            curLine1 = nextLine
-            curLine2 = lyricsFile.readline()
-            nextLine = lyricsFile.readline()
-            idx += 1
-
-        targetImage = Image.open(&#x27;../../Images/background/background.jfif&#x27;)
-        draw = ImageDraw.Draw(targetImage)
-        targetImage.save(f&quot;../../Images/{self.videoName}/{alps[idx]}.jpg&quot;)
-
-        lyricsFile.close()
-
-    def makeVideo(self) -&gt; None:
-        &#x27;&#x27;&#x27;
-        가사가 적힌 사진을 모아 영상으로 제작하는 함수
-        &#x27;&#x27;&#x27;
-			
-
-    def downloadMusic(self) -&gt; None:
-        &#x27;&#x27;&#x27;
-        영상에 필요한 노래를 유튜브 링크로부터 다운로드 받는 함수
-        &#x27;&#x27;&#x27;
-
-    def putMusicInVideo(self) -&gt; None:
-        &#x27;&#x27;&#x27;
-        영상에 다운로드 받은 음악을 합쳐 완성하는 함수
-        &#x27;&#x27;&#x27;
-
-
-if __name__ == &#x27;__main__&#x27;:
-    Name = input(&quot;노래 영상 제목을 입력해주세요 : &quot;)
-    Video = makeLyricsVideo(Name)</code></pre></div></article></body></html>
+</style></head><body><article id="79ab27f6-8c7e-4ab5-902a-7ab8d5b102f1" class="page serif"><header><h1 class="page-title">프로그래밍의 정석 - 우에다 이사오 (2021/11/16)</h1></header><div class="page-body"><hr id="10df0781-4406-49ee-a570-40fd05597243"/><p id="c03b771b-a910-410d-b740-f263c162c177" class="">
+</p><p id="e4f1b3a1-747f-4f90-806e-ef7e7ec92755" class="">좋지 못한 코드는 무엇일까?</p><ul id="35833960-8ee0-42d8-ba3b-3d3d6150cb1d" class="bulleted-list"><li style="list-style-type:disc">오류가 자주 발생하는 코드</li></ul><ul id="08d14a33-7d35-4e69-ba62-e37433258356" class="bulleted-list"><li style="list-style-type:disc">이해하기 어렵고 복잡하며 깔끔하지 못한 코드</li></ul><ul id="2ad2f9f7-f55e-43d4-848f-52a39e67c1eb" class="bulleted-list"><li style="list-style-type:disc">수정하기 어려운 코드</li></ul><p id="994dfc7b-57b5-42ac-bb0e-973762e3a301" class="">이 세가지 경우를 보통 좋지 못한 코드라고 부르는 것 같다.</p><p id="a587eba4-cac9-4505-9c57-c82c0abeb5f2" class="">물론 좋은 코드를 작성하는 것은 어렵다.</p><p id="d48c0d41-c358-4f45-a4e5-9b78395b6077" class="">
+</p><p id="1a452a0e-c2a6-402b-99b7-8c34ef3ba4cc" class="">
+</p><p id="2ab33540-8bf5-485f-aa2f-63839523b03f" class="">소프트웨어의 특징</p><ul id="63e7295a-8266-4dae-9327-f8c7163729e4" class="bulleted-list"><li style="list-style-type:disc">복잡하다.</li></ul><ul id="6cade60e-fc7d-44e9-8c73-7c3510b0d7a8" class="bulleted-list"><li style="list-style-type:disc">단독으로 존재하기 보단 다른 요소들과 동조한다.</li></ul><ul id="20aa8245-6af7-44f7-b432-344300bd68bf" class="bulleted-list"><li style="list-style-type:disc">계속해서 변경되어야 한다.</li></ul><ul id="ffa89162-2eca-4a5c-bfd5-fc8458bd680f" class="bulleted-list"><li style="list-style-type:disc">눈에 잘 보이지 않는다.</li></ul><p id="e1be9613-b20a-4dfd-a832-457608b8a6ab" class="">
+</p><p id="9deec0fb-1b21-459d-92b2-92c3f6066005" class="">
+</p><p id="a5f1a85b-f5e2-4408-8e42-cd8b34c67110" class="">코드 작성 유의점</p><ul id="190d7395-47e8-45da-999c-14e18a10a298" class="bulleted-list"><li style="list-style-type:disc">코드로 능력을 뽐내려 하지 마라</li></ul><ul id="176d5809-4d5d-470f-9744-9ccb9cf628e6" class="bulleted-list"><li style="list-style-type:disc">지금 작성할 필요가 없는 것은 작성하지 마라</li></ul><ul id="b744dfe4-7fe1-4c2c-8c2e-1e2dd2c1426c" class="bulleted-list"><li style="list-style-type:disc">코드를 복사하지 말고 최대한 중복을 줄이자 (DRY - Don&#x27;t Repeat Yourself )</li></ul><ul id="553a28b5-b47e-4693-bc29-8587ac3960d9" class="bulleted-list"><li style="list-style-type:disc">테스트 코드를 작성하라</li></ul></div></article></body></html>
