@@ -9,12 +9,8 @@ searchURL = "https://gall.dcinside.com/mgallery/board/lists/?id=godverfool&s_typ
 searchHtml = requests.get(searchURL, headers=headers).text
 searchSoup = BeautifulSoup(searchHtml, "html.parser")
 
-TopicURL = searchSoup.find("table", {"class":"gall_list empty"})
+TopicURL = searchSoup.find("table", {"class": "gall_list empty"})
 URLs = TopicURL.find_all("a")
-
-
-
-
 
 
 # https://gall.dcinside.com/mgallery/board/lists/?id=godverfool&page=1
