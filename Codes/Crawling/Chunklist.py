@@ -11,7 +11,3 @@ searchSoup = BeautifulSoup(searchHtml, "html.parser")
 
 TopicURL = searchSoup.find("table", {"class": "gall_list empty"})
 URLs = TopicURL.find_all("a")
-
-
-# https://gall.dcinside.com/mgallery/board/lists/?id=godverfool&page=1
-# https://gall.dcinside.com/mgallery/board/lists/?id=godverfool&s_type=search_subject_memo&s_keyword=chunklist
