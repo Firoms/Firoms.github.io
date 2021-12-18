@@ -1,0 +1,658 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Terms</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6d38e0a3-d171-4146-be4a-45df39035f70" class="page serif"><header><h1 class="page-title">Terms</h1></header><div class="page-body"><blockquote id="c4a39e53-b501-41ab-8991-2fca9a492974" class="">이해는 되지만 말로 표현하기 어려운 용어들을 정리한다.</blockquote><hr id="07166e44-acae-46e3-b337-368e3fb5c9cc"/><p id="c834d8f3-78ca-430d-a84f-8ce814b398fb" class="">
+</p><ul id="d5f8257b-13ca-45f3-ba47-259725cde792" class="toggle"><li><details open=""><summary>Source Code</summary><p id="85b8cf8a-df9a-406d-81c8-0cd4ce416fa4" class="">사람들이 소프트웨어를 프로그래밍 언어로 기술한 글이다.</p></details></li></ul><ul id="356584bc-e7e4-49d3-b376-3fc30aa67e83" class="toggle"><li><details open=""><summary>Debug</summary><p id="3d2b8439-24aa-42ba-bba0-cc18db35464f" class="">개발 과정에서 발생하는 문제나 오류를 찾아내어 원인을 찾고 수정하는 일이다.</p></details></li></ul><ul id="1dc55faf-231a-425d-a199-5f1341a45362" class="toggle"><li><details open=""><summary>Data Type - 자료형</summary><p id="d50b08a6-5e80-4fa0-99e3-2a875f955ede" class="">프로그래밍 언어에서 사용할 수 있는 데이터의 종류이다.</p></details></li></ul><ul id="4db2778d-a475-41c9-8840-74bae9b81a4f" class="toggle"><li><details open=""><summary>Shell</summary><p id="8d7eee03-d7aa-445a-bfd0-712386eef8dc" class="">운영체제 기능과 서비스를 구현하는 인터페이스를 제공하는 소프트웨어이다.</p></details></li></ul><ul id="a5c1b682-7c30-4d3a-8bdb-628324f97881" class="toggle"><li><details open=""><summary>Interpreter</summary><p id="170fc3c6-a306-4c00-b421-22b7dc045f0f" class="">명령어들을 한 번에 한 줄씩 읽어들여서 실행하는 소프트웨어이다.</p><p id="eaa8b984-c048-41e2-8e90-352c93267cc6" class="">파이썬은 인터프리터 언어이다.</p></details></li></ul><ul id="50658efb-d457-4f56-845f-f39ae373a5f5" class="toggle"><li><details open=""><summary>Compiler</summary><p id="39dbd59d-38c0-4747-9441-6b830b3d88f1" class="">특정 프로그래밍 언어를 컴퓨터가 작업할 수 있는 언어로 옮기는 소프트웨어이다.</p><p id="8035926a-e9c7-4fa3-9661-a433a0c5752d" class="">C, C++, JAVA와 같은 언어는 컴파일러를 사용한다.</p></details></li></ul><ul id="42eba143-7009-4827-a68f-73bfbbe4db28" class="toggle"><li><details open=""><summary>IDLE</summary><p id="e7d9ee1f-ce6a-40d2-a983-edde7211169e" class="">Intergrated Development and Learning Environment의 약자로 파이썬 통합 개발 환경이다.</p></details></li></ul><ul id="5b74aad2-baba-4da6-b831-09b54a366416" class="toggle"><li><details open=""><summary>Editor </summary><p id="bc47c601-2588-4f06-8ec1-57cb55557f7b" class="">프로그래밍을 수월하게 할 수 있도록 다양한 기능과 편리한 환경을 제공하는 코드 편집 소프트웨어이다.</p></details></li></ul><ul id="f9196554-b5c3-4242-a0c8-1bfd3a302d93" class="toggle"><li><details open=""><summary>Encoding</summary><p id="66714d99-7cc8-4857-9361-1fb28da86e54" class="">사용자가 입력한 문자를 컴퓨터가 이용할 수 있는 신호로 만드는 것이다.</p></details></li></ul><ul id="10639df9-9996-4f8d-be9d-4e0f1e0789b3" class="toggle"><li><details open=""><summary>Decoding</summary><p id="32ad0e25-379c-4ba2-a694-fada05880166" class="">인코딩과는 반대로 컴퓨터의 신호를 사용자가 알 수 있는 문자로 만드는 것이다.</p></details></li></ul><ul id="03c41e16-11b4-4d04-ba4a-4a5d8cb4bc1b" class="toggle"><li><details open=""><summary>Framework</summary><p id="08f9b804-36fa-474d-b690-c8947557b8d8" class="">어떤 소프트웨어의 뼈대가 되는 소프트웨어 기술이다.</p></details></li></ul><ul id="735605fd-20c8-4b97-a2ba-7c6f9946e898" class="toggle"><li><details open=""><summary>Operator</summary><p id="da357c4e-449a-4a92-85ba-580ea33562b0" class="">수학적인 연산자 뿐만 아니라 문자로 된 연산자까지를 이르는 말이다.</p></details></li></ul><ul id="ac1b716c-0ff9-4b69-82c8-72e58678ec88" class="toggle"><li><details open=""><summary>Annotation - 주석</summary><p id="e2fd6abc-bd43-4e8d-9bfc-78c0bcad190a" class="">소스코드를 더 쉽게 사용할 수 있도록 하는 메모이다.</p></details></li></ul><ul id="ae71a7ea-3bf3-43f3-89b9-834faada47b7" class="toggle"><li><details open=""><summary>Iterable</summary><p id="b1cb9bfa-831a-4582-a12d-2b2cbdeea033" class="">값을 차례대로 반복하여 꺼낼 수 있는 경우를 말한다.</p></details></li></ul><ul id="77420368-52c4-4aee-bb52-9bfc4a700b34" class="toggle"><li><details open=""><summary>Generator</summary><p id="0bfe4647-0b59-45cb-b888-338fea9b4bac" class="">Iterator를 생성해주는 함수로 yield 키워드를 이용한다.</p></details></li></ul><ul id="09eca3e8-0772-4071-b98c-4c803f438386" class="toggle"><li><details open=""><summary>Keyword</summary><p id="e6e4ee03-2c98-410f-be4a-42ba7380cd11" class="">이미 정해진 용도 외로는 사용이 불가능한 문자열이다.</p></details></li></ul><ul id="1eb43cfb-ba06-4f9e-9826-eae77cf7c00b" class="toggle"><li><details open=""><summary>Yield</summary><p id="0d830247-ff87-4bda-a167-a415e73fe277" class="">Iterator 생성을 위해 사용되는 키워드이다.</p></details></li></ul><ul id="d7353aed-1148-4e99-bab0-1c12bf60a7e3" class="toggle"><li><details open=""><summary>Immutable</summary><p id="a21cf97a-b014-4a80-a935-3a2daa2ba2f5" class="">불변하는 것을 의미한다.</p></details></li></ul><ul id="22161144-1230-4704-841c-5ceb32db0168" class="toggle"><li><details open=""><summary>Constant - 상수</summary><p id="327db452-55cf-4b85-aa89-644e4bf473ef" class="">변하지 않는 변수이다.</p></details></li></ul><ul id="bcfeb2a4-3f12-47c5-8f5b-4d773b029622" class="toggle"><li><details open=""><summary>Literal</summary><p id="7ffc1e46-5e96-4aec-978a-c7e3c8ab2aeb" class="">변하지 않는 데이터를 의미한다.</p></details></li></ul><ul id="41b10f50-6dac-49e8-a1cd-a1ece95fa541" class="toggle"><li><details open=""><summary>Parameter</summary><p id="d1a532cc-9d72-4fe8-85e4-845a2960cc68" class="">함수의 매개 변수를 의미한다.</p></details></li></ul><ul id="9d1bb751-840b-4dc5-b80d-f3b4d06ecb28" class="toggle"><li><details open=""><summary>Argument</summary><p id="d14530ec-f8c1-4aec-8fd4-e991356f73ff" class="">함수의 parameter에 집어넣는 값을 의미한다.</p></details></li></ul><ul id="9b5f9363-fa89-479f-aee5-2f420d723aad" class="toggle"><li><details open=""><summary>Variable - 변수</summary><p id="1034d3fc-cfc3-4d11-9076-7e3adcdc3867" class="">변하는 값을 나타내는 문자를 변수라고 한다.</p></details></li></ul><ul id="6901239c-e20d-4b1b-b549-819579837fe3" class="toggle"><li><details open=""><summary>Object  - 객체</summary><p id="adc8e50b-2c54-460a-8836-c0d029c0366c" class="">메모리에 할당되어 프로그램에 사용되는 공간이다.</p></details></li></ul><ul id="9308855a-a54d-440c-8abd-a3d8a41af396" class="toggle"><li><details open=""><summary>Instance</summary><p id="f2d2ae08-e51a-4dd8-95c7-c9e363899367" class="">클래스를 이용하여 생성된 객체이다.</p></details></li></ul><ul id="c414416e-fadd-40e0-bb83-f0f618e5d4a1" class="toggle"><li><details open=""><summary>Inheritance - 상속</summary><p id="905ecf53-a6e1-41a2-9f8d-e88eb99ffcb1" class="">기존의 클래스로부터 속성과 동작을 이어받는 것을 말한다.</p></details></li></ul><ul id="61c2fc20-7d2f-4a3c-bc7e-246bf4a19f6d" class="toggle"><li><details open=""><summary>Method</summary><p id="0160730a-3b13-4210-bde6-ca69a36dfa47" class="">클래스 내부에서 인스턴스와 관련된 기능을 하는 함수이다.</p></details></li></ul><ul id="84a1ecdb-b485-49f4-9d21-e9856fd837b4" class="toggle"><li><details open=""><summary>Override</summary><p id="d465b1f9-e618-4ba6-836b-81c631e3b71d" class="">기존 클래스의 특정 메소드를 가져와 정의하는 것이다.</p></details></li></ul><ul id="093efdd6-92ce-4b66-8b1b-79ba0f6bb9c5" class="toggle"><li><details open=""><summary>Overload</summary><p id="388680fb-e1bf-49c0-ae0c-723d5e4a0804" class="">클래스의 메소드를 새로 정의하여 덮어씌우는 것이다.</p></details></li></ul><ul id="106137e7-aaac-4541-b034-bbf1676ae712" class="toggle"><li><details open=""><summary>Pip</summary><p id="ff8909ea-7b17-4135-9ee3-8daae6590835" class="">파이썬으로 작성된 패키지 소프트웨어를 설치하고 관리하는 시스템이다.</p></details></li></ul><ul id="c3e9d144-55dc-45bd-adc2-f67a8f19a647" class="toggle"><li><details open=""><summary>Library</summary><p id="f795f8bf-e5b3-4ae3-979e-8a0974583c63" class="">패키지들의 묶음을 이야기한다.</p></details></li></ul><ul id="0e018e3a-3c11-4cdd-baba-2e1963e067fc" class="toggle"><li><details open=""><summary>Package</summary><p id="1ba337eb-5f7b-45fb-bd0f-c33c092adb61" class="">모듈들의 묶음을 이야기한다.</p></details></li></ul><ul id="bbd07a61-dc7f-41ef-a19c-f8598281d9c4" class="toggle"><li><details open=""><summary>Module</summary><p id="14d28b37-85d5-49dc-8e81-59c93551d2fa" class="">Import할 수 있는 하나의 파일을 의미한다.</p></details></li></ul><ul id="7cbb7902-43c2-4646-8ac8-a198d1977adb" class="toggle"><li><details open=""><summary>Script</summary><p id="7dd7464e-21ea-49db-b614-9739b6d5c398" class="">직접 실행하는 용도로 짜여진 하나의 파일이다.</p></details></li></ul><ul id="9f355a73-fbc6-4dea-86e7-596a3bc56439" class="toggle"><li><details open=""><summary>Import</summary><p id="8302b22b-c28e-44a2-bb9a-636bc6e7cfc1" class="">특정파일의 내용을 이용할 수 있도록 불러오는 것이다.</p></details></li></ul><ul id="4c8f2c3f-ec7a-4291-826f-cc3eb02573dc" class="toggle"><li><details open=""><summary>Virtual Environment</summary><p id="4e4eb276-9b73-4a0b-ad0d-0d7afa003b9f" class="">가상환경은 파이썬에서 독립된 환경을 만들어 패키지를 관리할 수 있도록 하는 패키지이다.</p></details></li></ul><ul id="b9811069-607a-4fa9-b230-8e826b086815" class="toggle"><li><details open=""><summary>Tkinter</summary><p id="a4839e63-c443-45ca-b6d2-2e00a5b08467" class="">GUI 구성에 도움을 주는 파이썬 모듈이다.</p></details></li></ul><ul id="ed50c4b4-ba46-4e2a-8f61-6182dbf88912" class="toggle"><li><details open=""><summary>Thread</summary><p id="38409a1d-def9-4827-8054-c87d5695f956" class="">프로세스 내에서 작업을 수행하는 단위이다.</p></details></li></ul><ul id="24360054-9e7d-4a3a-85f5-500d30b17390" class="toggle"><li><details open=""><summary>Process</summary><p id="4851dc79-2471-480e-b9f4-f942d4ce8743" class="">메모리 공간을 할당 받아 실행 중인 프로그램이다.</p></details></li></ul><ul id="2320c868-a39c-4b86-ae35-59c8097f31f7" class="toggle"><li><details open=""><summary>Function</summary><p id="64df679a-fae2-4b08-b015-283353c3b149" class="">소프트웨어에서 특정 동작을 수행하는 일정 코드 부분이다.</p></details></li></ul><ul id="dee25c4f-4604-40e8-a063-63c5b164bde4" class="toggle"><li><details open=""><summary>Return</summary><p id="3c3b31ea-cded-4985-9cd4-13a8b3a6b2f6" class="">함수 실행을 종료하며 특정 값을 반환하는 키워드이다.</p></details></li></ul><ul id="1cc38b9b-d465-4acd-8d19-45a3d7f603bf" class="toggle"><li><details open=""><summary>Recursion</summary><p id="b928070b-2b5f-43fb-9f91-20d2e8f53ed2" class="">재귀는 자기 자신을 다시 실행하는 것으로 함수로 보통 구현된다.</p></details></li></ul><ul id="ec795bc0-136d-43cf-91bb-e2af66162e27" class="toggle"><li><details open=""><summary>Lambda</summary><p id="da4318c9-246d-445a-af2c-0720e806fb25" class="">이름이 없는 함수를 만들 때 이용되는 키워드이다.</p></details></li></ul><ul id="2069ab31-623e-4798-bef4-cd1ec83dfd32" class="toggle"><li><details open=""><summary>Decorator</summary><p id="7c3ec2ab-9119-4752-a831-cdf37b34c78c" class="">함수에 덧붙일 구문을 정의해 반복적으로 추가할 수 있도록 하는 기능이다.</p></details></li></ul><ul id="941acc6e-f5e4-43c8-9862-41a0a6aa4cc5" class="toggle"><li><details open=""><summary>Class</summary><p id="8180108b-737a-4f00-8c1a-7cc006515aec" class="">객체를 생성할 수 있도록 하는 코드 부분이다.</p></details></li></ul><ul id="ab8a4816-3e22-4634-9384-02057c37eced" class="toggle"><li><details open=""><summary>Constructor</summary><p id="8ad1c8e5-0fdc-474d-9f1a-6acb62b6ce36" class="">생성자는 객체를 생성할 때 호출되는 메서드이다.</p></details></li></ul><ul id="aeb78e2f-908d-4930-b2ba-57ca3f4ee699" class="toggle"><li><details open=""><summary>Destructor</summary><p id="bf8a1d6a-aa08-4374-b931-2f0caed29edb" class="">소멸자는 객체가 소멸할 때 호출되는 메서드이다.</p></details></li></ul><ul id="2b3959b0-2edb-43ae-910d-b47589bead22" class="toggle"><li><details open=""><summary>Tree</summary><p id="e6f22458-1263-4410-a726-8afa4a600aad" class="">순회하지 않는 형태로 노드를 연결한 자료구조이다.</p></details></li></ul><ul id="27f48ea4-e8e2-4f8f-95b9-1e99909005ba" class="toggle"><li><details open=""><summary>Graph</summary><p id="d70d3896-5b9a-4a4a-9c3d-4a0c479b63a9" class="">연결된 노드들의 집합을 의미하는 자료구조이다.</p></details></li></ul><ul id="df426ddb-c4de-4c22-99a4-27392b606862" class="toggle"><li><details open=""><summary>Node</summary><p id="360d2aa9-d08e-465e-bcc4-84e786eca660" class="">트리와 그래프의 기초 단위로 한 데이터 지점을 의미한다.</p></details></li></ul><ul id="b91bd9bd-7fcc-44b2-8d5a-0a5b10cfeee4" class="toggle"><li><details open=""><summary>Two Binary Tree - 이진 트리</summary><p id="2241fcb9-faf5-4a50-8beb-eef8883b0ab1" class="">최대 2개의 자식 노드를 가지는 트리이다.</p></details></li></ul><p id="9eb51a9c-0dd5-4d0b-96a1-efee9880be1f" class="">
+</p></div></article></body></html>
